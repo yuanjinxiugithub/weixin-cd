@@ -1,0 +1,70 @@
+<view class="section">
+<form bindsubmit="formSubmit" bindreset='formReset'>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t课程名称：</view>
+      <view class="input-value"> 
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
+          <view class="picker">{{array[index]}}</view>
+        </picker>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t课程编码：</view>
+      <view class="input-value"> 
+          <input type='text' placeholder='课程编码（后台获取）'></input>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t教师名称：</view>
+      <view class="input-value"> 
+          <input type='text' placeholder='教师名称'></input>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t课程时间：</view>
+      <view class="input-value"> 
+          <input type='text' name="leaveTime" placeholder='后台获取数据'></input>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t请假时间：</view>
+      <view class="input-value"> 
+          <input type='text' name="leaveTime" placeholder='获取当前时间'></input>
+      </view>   
+  </view>
+   <view class="line"></view>
+  <view class='form-group' style='height:20px;'>
+    <view class="label">\t请假原因：</view>
+    <view class="input-value"> 
+    </view>   
+  </view>
+   <view class='form-group-1'>
+    <view class="input-value"> 
+        <textarea name="leaveReason" placeholder='请输入不少于15字' placeholder-style='font-size:16px;'/>
+    </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group' style='height:20px;'>
+    <view class="label">\t上传附件：</view>
+    <view class="input-value"> 
+    </view>
+  </view>
+  <view class='form-group-1'>
+    <view class="input-value"> 
+        <view class="imgUpload" bindtap='chooiceImg'>
+           <image src="{{imgSrc}}" id="add_img"></image>
+        </view>
+    </view>    
+  </view>
+   <view class="line"></view>
+   <view class='formBtn'>
+      <button class="subBtn" type='primary' form-type='submit'>提交</button>
+      <button class='setBtn' type='default' form-type='reset'>清空</button>
+   </view>
+  </form>
+</view>

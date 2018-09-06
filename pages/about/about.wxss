@@ -1,0 +1,40 @@
+/* pages/about/about.wxss */
+.slide-image{
+  width: 100%;
+  margin: 0 auto;
+}
+.content-item{
+  margin: 16px 10px;
+}
+.content-item  .title{
+display: flex;
+flex-direction: row;
+height: 37px;
+line-height: 37px;
+text-align: center;
+align-items: center;
+ color: #4675f9;
+ font-size: 18px;
+}
+.content-item  .title-name{
+  height: 37px;
+  line-height: 37px;
+  margin-left:10px;
+}
+.content-item  .title .icon-img{
+  width:30px;
+  height: 30px;
+  margin-top: 1.5px;
+}
+.content-item  .title image{
+  width:30px;
+  height: 30px;
+}
+
+.content-item .contruction{
+  margin: 10px 0;
+  text-indent: 30rpx;
+  text-align: left;
+  font-size: 16px;
+  font-family:sans-serif;
+}

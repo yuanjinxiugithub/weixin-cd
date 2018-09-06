@@ -1,0 +1,36 @@
+.list-item  .list-content  {
+  display: flex;
+  flex-direction: column;
+  height: 180rpx;
+  flex: 4;
+}
+
+.list-item  .list-content .item-name {
+  font-size: 17px;
+  margin: 15px 18px;
+}
+
+.list-item  .list-content .item-teacher {
+  font-size: 15px;
+  margin: 0 20px;
+}
+
+.list-item  .list-btn {
+  flex: 1;
+  height: 180rpx;
+  line-height: 160rpx;
+  justify-content: center;  
+}
+
+.lookBtn {
+  width: 60px;
+  height: 60rpx;
+  margin: 0 auto;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 60rpx;
+  border: 1px solid #4675f9;
+  color: #4675f9;
+  margin-top: 60rpx;
+}

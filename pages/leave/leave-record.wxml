@@ -1,0 +1,71 @@
+<view class="list">
+  <scroll-view class='tab-h' scroll-x="true">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">待审核 </view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">已审核</view>
+  </scroll-view>
+  <!--滑块试图容器  -->
+  <swiper class="tab-content" current='{{currentTab}}' duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <!--待处理  -->
+   <swiper-item> 
+     <scroll-view scroll-y="true" class='scoll-h' >  
+       <block>
+       <!-- 列表项 需要循环渲染 -->
+          <view class="list-item">
+            <view class="list-content">
+            <view class="item-name"><text style="margin-right:25px">数据结构</text><text>课程时间</text></view>
+            <view class="item-teacher">授课教师:<text  style="margin-right:25px">张三</text>请假学生:
+                 <text>李四</text>
+            </view>
+            </view>
+            <view class='list-btn'>
+               <navigator url="/pages/leave/leave-detail" class="lookBtn">查看</navigator> 
+            </view>
+          </view>
+
+         <view class="list-item">
+           <view class="list-content">
+            <view class="item-name"><text style="margin-right:25px">数据挖掘</text><text>课程时间</text></view>
+            <view class="item-teacher">授课教师:<text  style="margin-right:25px">张三</text>请假学生:
+                 <text>李四</text>
+            </view>
+            </view>
+            <view class='list-btn'>
+               <navigator url="/pages/leave/leave-detail" class="lookBtn">查看</navigator> 
+            </view>
+          </view>
+        </block>
+     </scroll-view>
+   </swiper-item>
+  <!-- 已处理 -->
+     <swiper-item> 
+     <scroll-view scroll-y="true" class='scoll-h' >  
+       <block>
+       <!-- 列表项 需要循环渲染 -->
+          <view class="list-item">
+            <view class="list-content">
+            <view class="item-name"><text style="margin-right:25px">数据结构</text><text>课程时间</text></view>
+            <view class="item-teacher">授课教师:<text  style="margin-right:25px">张三</text>请假学生:
+                 <text>李四</text>
+            </view>
+            </view>
+            <view class='list-btn'>
+               <navigator url="/pages/leave/leave-detail" class="lookBtn">查看</navigator> 
+            </view>
+          </view>
+
+         <view class="list-item">
+           <view class="list-content">
+            <view class="item-name"><text style="margin-right:25px">数据挖掘</text><text>课程时间</text></view>
+            <view class="item-teacher">授课教师:<text  style="margin-right:25px">张三</text>请假学生:
+                 <text>李四</text>
+            </view>
+            </view>
+            <view class='list-btn'>
+               <navigator url="/pages/leave/leave-detail" class="lookBtn">查看</navigator> 
+            </view>
+          </view>
+        </block>
+     </scroll-view>
+   </swiper-item>
+  </swiper>
+</view>

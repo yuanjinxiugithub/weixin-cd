@@ -1,0 +1,77 @@
+<!--pages/leave/leave-detail.wxml-->
+<view class="section">
+<form>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t课程名称：</view>
+      <view class="input-value"> 
+         <text>课程名字</text>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t课程编码：</view>
+      <view class="input-value"> 
+          <text>课程编码（后台获取）</text>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t教师名称：</view>
+      <view class="input-value"> 
+           <text>教师名字</text>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t课程时间：</view>
+      <view class="input-value"> 
+           <text>后台获取数据</text>
+      </view>   
+  </view>
+  <view class="line"></view>
+    <view class='form-group'>
+      <view class="label">\t请假学生：</view>
+      <view class="input-value"> 
+           <text>张三</text>
+      </view>   
+  </view>
+  <view class="line"></view>
+    <view class='form-group'>
+      <view class="label">\t学生班级:</view>
+      <view class="input-value"> 
+           <text>软件11403</text>
+      </view>   
+  </view>
+  <view class="line"></view>
+  <view class='form-group'>
+      <view class="label">\t请假时间：</view>
+      <view class="input-value"> 
+            <text>请假时间</text>
+      </view>   
+  </view>
+   <view class="line"></view>
+  <view class='form-group'>
+    <view class="label">\t请假原因：</view>
+    <view class="input-value"> 
+      <text>请假原因请假原因请假原因请假</text>
+    </view>   
+  </view>
+  <view class="line"></view>
+   <view class='form-group'>
+      <view class="label">\t查看附件：</view>
+       <view class="input-value">
+        <button style='width:40%' size='mini'>点击查看</button>
+       </view>
+   </view>
+   <view class="line"></view>
+    <view class='form-group'>
+      <view class="label">\t是否通过:</view>
+       <view class="input-value">
+        <text>否</text>
+       </view>
+   </view>
+   <view class="line"></view>
+  </form>
+</view>
+

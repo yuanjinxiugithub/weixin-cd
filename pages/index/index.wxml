@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+   <!-- top  -->
+  <view class="userinfoTop">
+      <view class="userinfo" style='flex-direction:row;'> 
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>                  <view>
+              <view>
+                 <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+              </view>
+              <view>
+                   <text class="userinfo-school">武汉纺织大学 \t\t<text class="userinfo-identity">学生</text>
+                   </text>
+              </view>
+              
+          </view>       
+       </view>
+  </view>
+  <!--menu 菜单  -->
+  <view class="section menu">
+    <view class="flex-wrp menu-item">
+        <view class="flex-item" bindtap="redicToArrive">
+          <image class="log-img" src="/imgs/addr.png"></image>
+          <view>点名</view>
+        </view>
+        <view class="flex-item" bindtap="redicToArriveRe">
+          <image class="log-img" src="/imgs/static.png"></image>
+          <view>点名记录</view>
+        </view>
+        <view class="flex-item" bindtap="redicToLeave">
+         <image class="log-img" src="/imgs/leave.png"></image>
+          <view>请假</view>
+        </view> 
+    </view>
+    <view class="flex-wrp menu-item">
+         <view class="flex-item" bindtap="redicToLeaveRe">
+          <image class="log-img" src="/imgs/task.png"></image>
+          <view>请假记录</view>
+         </view>
+        <view class="flex-item" bindtap="redicToNotice">
+          <image class="log-img" src="/imgs/ring.png"></image>
+          <view>通知</view>
+        </view>
+        <view class="flex-item" bindtap="redicToNoticeRe">
+          <image class="log-img" src="/imgs/notice.png"></image>
+          <view>通知记录</view>
+        </view> 
+    </view>
+    <view class="flex-wrp  menu-item">
+         <view class="flex-item" bindtap="redicToUser">
+          <image class="log-img" src="/imgs/me.png"></image>
+          <view>个人中心</view>
+         </view>
+        <view class="flex-item" bindtap="redicToAbout">
+          <image class="log-img" src="/imgs/school.png"></image>
+          <view>关于我们</view>
+        </view>
+        <view class="flex-item">
+          <image class="log-img" ></image>
+          <view></view>
+        </view> 
+    </view>
+  </view>
+ </view>

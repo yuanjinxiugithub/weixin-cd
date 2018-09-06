@@ -1,0 +1,66 @@
+<!--pages/about/about.wxml-->
+<view class='container'>
+  <!--轮播图  -->
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='content'>
+    <view class='content-item'>
+      <view class='title'>
+        <view class='icon-img'>
+          <image src='http://120.24.71.92:9096/cd-demo/appImgs/flower.png'></image>
+        </view>
+        <view class="title-name">
+          <text>关于武汉纺织大学</text>
+        </view>
+      </view>
+      <view class='line' style="background-color:#4675f9"></view>
+      <view class='contruction'>
+        <view> 武汉纺织大学坐落于“九省通衢”之称的湖北武汉，地处光谷腹地，成为一所以工科为主，理、工、文 （艺）、管、法、教育等多学科协调发展，纺织服装特色鲜明、优势突出的普通高等院校。
+        </view>
+        <view>据2014年学校官网，学校拥有4个国家特色专业，4个国家级精品 武汉纺织大学课程，拥有1个国家级人才培养模式改革实验区，4个专业入选国家“卓越工程师教育培养计划” ，获国家高等学校教学成果二等奖1项，省部级教学成果一等奖5项。学生的创新能力不断提升，一大批学生在各类国 家 级、省级竞赛中取得丰硕的成果。
+        </view>
+        <view>
+          学校地址:
+        </view>
+        <view>
+          南湖校区：武汉市洪山区纺织路1号 邮政编码：430073
+        </view>
+        <view>
+          阳光校区：武汉市江夏区阳光大道1号 邮政编码：430200
+        </view>
+        <view>
+          东湖校区：武汉市武昌区东湖梨园渔光村1号 邮政编码：430077
+        </view>
+      </view>
+    </view>
+    <view class='content-item'>
+      <view class='title'>
+        <view class='icon-img'>
+          <image src='http://120.24.71.92:9096/cd-demo/appImgs/flower.png'></image>
+        </view>
+        <view class="title-name">
+          <text>关于智慧课堂</text>
+        </view>
+      </view>
+      <view class='line' style="background-color:#4675f9"></view>
+      <view class='contruction'>
+        <view>
+          智慧课堂系统是为了实现在线课堂点到，教学信息统计而设计的。大学作为一种功能独特的文化机构，为国家输 送人才聚集地。但现今，很多高校面临着学生逃课，旷课问题。根据调查，高校面对这种现象，主要是基于基于教师课堂上花费几分钟时间点名，手动统计信息，对于学生上课情况的统计和查询要么是手工记录的表格，要么是excel记录的表格。由于数据繁多，容易丢失，且不易查找。总的来说，缺乏系统，规范的信息管理手段。
+        </view>
+        <view>
+       所以我们认为有必要建立一个课堂管理系统,使课堂管理工作自动化、规范化,系统化,程序化。避免课堂管理的随意性，提高信息处理的速度和准确性，能够及时、准确、有效的接受信息，通知消息等情况。
+        </view>
+        <view>
+        本系统使用移动工具实现课堂的快捷，准确的点到，消息通知，在线请假等，实现教学管理的严谨性，高效性。采用电脑pc端，快速计算，全面统计，简化教师工作，实现教学智能化过程。
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

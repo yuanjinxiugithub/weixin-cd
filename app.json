@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/bind/login",
+    "pages/index/index",
+    "pages/arrive/arrive",
+    "pages/arrive/arrive-record",
+    "pages/notice/notice",
+    "pages/notice/notice-record",
+    "pages/leave/leave",
+    "pages/leave/leave-record",
+    "pages/leave/leave-detail",
+     "pages/user/user",
+     "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智课",
+    "navigationBarTextStyle":"black"
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

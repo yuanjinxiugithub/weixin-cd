@@ -1,0 +1,68 @@
+ .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}  
+.userinfoTop{
+  display: flex;
+  height: 330rpx;
+  width: 100%;
+  background-color: #40E1D1;
+ flex-direction: row;
+}
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: white;
+  font-family:	SimMicrosoft YaHei;
+  font-size: 40rpx;
+}
+.userinfo-school{
+   color: white;
+  font-family:	SimMicrosoft YaHei;
+  font-size: 30rpx;
+}
+
+.menu{
+  width:98%;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+   margin: 0 10px 0 10px;
+   font-size: 30rpx;
+}
+.menu-item{
+  display: flex;
+  flex-direction: row;
+  height: 220rpx;
+   }
+.flex-item{
+  border: 1px solid #F0F0F0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ .log-img{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+  margin-bottom: 10px;
+ }
+
