@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/course_design/!svn/ver/222/ssm/cdDemo/cdDemo-web/src/main/resources
+END
+tools.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/resources/tools.xml
+END
+logback.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/resources/logback.xml
+END
+spring-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/resources/spring-config.xml
+END
+generatorConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/resources/generatorConfig.xml
+END

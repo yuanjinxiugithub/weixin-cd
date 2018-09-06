@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.MdmStudentDao">
+	<sql id="mdmStudentInfoColumns">
+		a.id AS "id",
+		a.code AS "code",
+		a.name AS "name",
+		a.class_code AS "classCode",
+		a.class_name AS "className",
+		a.parent_code AS "parentCode",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.remark AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	<sql id="mdmStudentInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="MdmStudentInfo">
+		SELECT 
+			<include refid="mdmStudentInfoColumns"/>
+		FROM mdm_student a
+		<where>
+			a.del_flag = '0'
+			<if test="id!= null">
+               and a.id = #{id}
+            </if>	
+            <if test="code!= null">
+               and a.code = #{code}
+            </if>
+		</where>
+	</select>
+	
+	<select id="findList" resultType="MdmStudentInfo">
+		SELECT 
+			<include refid="mdmStudentInfoColumns"/>
+		FROM mdm_student a
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="MdmStudentInfo">
+		SELECT 
+			<include refid="mdmStudentInfoColumns"/>
+		FROM  mdm_student a
+		<where>	
+			a.del_flag = '0'
+			<if test="name!= null">
+               and a.name LIKE  concat('%', #{name},'%')
+            </if>	
+            <if test="code!= null">
+               and a.code LIKE  concat('%', #{code},'%')
+            </if>
+		</where>
+		order by a.create_time desc
+	</select>
+	
+	<update id="delete">
+		UPDATE mdm_student SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="insert">
+		INSERT INTO mdm_student(
+			id,
+			code,
+			name,
+			class_code,
+			class_name,
+			parent_code,
+			create_user,
+			create_time,
+			update_user,
+			update_time,
+			remark,
+			del_flag
+		) VALUES (
+			#{id},
+			#{code},
+			#{name},
+			#{classCode},
+			#{className},
+			#{parentCode},
+			#{createUser},
+			#{createTime},
+			#{updateUser},
+			#{updateTime},
+			#{remarks},
+			#{DEL_FLAG_NORMAL}
+		)
+	</insert>
+	
+   <update id="update">
+		UPDATE mdm_student SET 	
+		    code = #{code},
+		    name = #{name},
+		    class_code = #{classCode},
+		    class_name = #{className},
+		    parent_code = #{parentCode},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+	
+</mapper>

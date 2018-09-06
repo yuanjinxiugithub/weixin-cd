@@ -1,0 +1,52 @@
+  <!--#include virtual="/cd-demo/include/h-ui.html" -->
+  <!-- 点到管理-->
+  <div class="warpper">
+     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>通知服务<span class="c-gray en">&gt;</span>统计详情<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+     <div class="page-container">
+        <div id="container" style="min-width:360px;height:400px"></div>
+    </div>
+  </div>
+  <!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/cd-demo/static/lib/hcharts/Highcharts/5.0.6/js/highcharts.js"></script>
+<script type="text/javascript" src="/cd-demo/static/lib/hcharts/Highcharts/5.0.6/js/modules/exporting.js"></script>
+  <script>
+  $(function () {
+	    $('#container').highcharts({
+	        chart: {
+	            plotBackgroundColor: null,
+	            plotBorderWidth: null,
+	            plotShadow: false
+	        },
+	        title: {
+	            text: '数据结构通知统计'
+	        },
+	        tooltip: {
+	    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                dataLabels: {
+	                    enabled: true,
+	                    color: '#000000',
+	                    connectorColor: '#000000',
+	                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: '所占比例',
+	            data: [
+	                ['课前通知',   50],
+	                ['文件通知',    10],
+	                ['调课通知',     6],
+	                ['其他',   1]
+	            ]
+	        }]
+	    });
+	});
+  </script>
+</body>
+</html>

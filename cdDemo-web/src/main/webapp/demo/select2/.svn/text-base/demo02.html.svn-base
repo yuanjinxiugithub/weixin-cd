@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<!--需要引入 jquery select2文件下的所有文件 包括中文包 bootstrap设置样式  -->
+	<script type="text/javascript" src="/mes-demo/static/jquery/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/mes-demo/static/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/mes-demo/static/select2/select2.min.css">
+	<script type="text/javascript" src="/mes-demo/static/select2/select2.full.min.js"></script>
+	<script type="text/javascript" src="/mes-demo/static/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/mes-demo/static/select2/i18n/zh-CN.js"></script><!-- 中文压缩包-->
+	<script type="text/javascript" src="/mes-demo/static/bmsmart/sys-select2.js"></script>
+</head>
+<body style="margin:20px;">
+	  <div class="col-sm-6 form-group">
+		            <label class="col-sm-4 control-label">程序化控制：</label>
+		           <div class="col-sm-8">
+		                   		<select class="js-event-log form-control ">
+		                   		          <option value="AL">Alabama</option>
+                                          <option value="WY">Wyoming</option>
+                                          <option value="AL">Alabama</option>
+                                          <option value="WY">Wyoming</option>
+                                          <option value="AL">Alabama</option>
+                                          <option value="WY">Wyoming</option>
+				                </select>
+		                </div>
+		            </div>
+		           <div class="col-sm-6 form-group">
+		                <label class="col-sm-4 control-label">DOM事件:</label>
+		                <div class="col-sm-8">
+		                   		<select class="js-example-events form-control" >
+		                   	     <option value=""></option>
+								  <option value="AL">Alabama</option>
+								  <option value="WY">Wyoming</option>
+								  <option value="WY">Wyoming</option>
+								  <option value="WY">Wyoming</option>
+								</select>
+		                </div>
+		 </div>
+		 <script>
+			 //DOM事件
+			 var $eventLog = $(".js-event-log");
+			 var $eventSelect = $(".js-example-events");
+			  
+			 $eventSelect.on("select2:open", function (e) { log("select2:open", e); });
+			 $eventSelect.on("select2:close", function (e) { log("select2:close", e); });
+			 $eventSelect.on("select2:select", function (e) { log("select2:select", e); });
+			 $eventSelect.on("select2:unselect", function (e) { log("select2:unselect", e); });
+			  
+			 $eventSelect.on("change", function (e) { log("change"); });
+			  
+			 function log (name, evt) {
+			   if (!evt) {
+			     var args = "{}";
+			   } else {
+			     var args = JSON.stringify(evt.params, function (key, value) {
+			       if (value && value.nodeName) return "[DOM node]";
+			       if (value instanceof $.Event) return "[$.Event]";
+			       return value;
+			     });
+			   }
+			   var $e = $("<li>" + name + " -> " + args + "</li>");
+			   $eventLog.append($e);
+			   $e.animate({ opacity: 1 }, 10000, 'linear', function () {
+			     $e.animate({ opacity: 0 }, 2000, 'linear', function () {
+			       $e.remove();
+			     });
+			   });
+			 }
+			 </script>
+		 <div class="col-sm-6 form-group">
+		            <label class="col-sm-4 control-label">程序化访问：</label>
+		           <div class="col-sm-8">
+		                   		<select class="js-example-programmatic  form-control">
+		                   		   <option value="AL">Alabama</option>
+								  <option value="WU">Wyoming</option>
+								  <option value="WY">Wyoming</option>
+		                   		</select>
+		                </div>
+		            </div>
+		           <div class="col-sm-6 form-group">
+		                <label class="col-sm-4 control-label">多选：</label>
+		                <div class="col-sm-8">
+		                   		<select class="js-example-programmatic-multi  form-control">
+							           <option value="AL">Alabama</option>
+								  		<option value="WU">Wyoming</option>
+								 		 <option value="WY">Wyoming</option>
+							   </select>
+		                </div>
+		 </div>
+		  <div class="col-sm-6 form-group">
+		            <label class="col-sm-4 control-label">点击按钮：</label>
+		           <div class="col-sm-8">
+		                   		<button class="js-programmatic-set-val btn">设置某个值</button>
+		                   		<button class="js-programmatic-open btn">打开</button>
+		                   		<button class="js-programmatic-close btn">关闭</button>
+		                   		<button class="js-programmatic-init btn">初始化</button>
+		                   		<button class="js-programmatic-destroy btn">销毁</button>
+		                </div>
+		            </div>
+		           <div class="col-sm-6 form-group">
+		                <div class="col-sm-4"></div>
+		                <div class="col-sm-8">
+		                        <button class="js-programmatic-multi-set-val btn">设置值</button>
+		                   		<button class="js-programmatic-multi-clear btn">清除</button>
+		                </div>
+		 </div>
+		 <script>
+		 var $example = $(".js-example-programmatic").select2();
+		 var $exampleMulti = $(".js-example-programmatic-multi").select2({
+			 multiple:true
+		 });
+		 $example.val("WY").trigger("change");	
+		 $(".js-programmatic-set-val").on("click", function () { $example.val("WY").trigger("change"); });
+		  
+		 $(".js-programmatic-open").on("click", function () { $example.select2("open"); });
+		 $(".js-programmatic-close").on("click", function () { $example.select2("close"); });
+		  
+		 $(".js-programmatic-init").on("click", function () { $example.select2(); });
+		 $(".js-programmatic-destroy").on("click", function () { $example.select2("destroy"); });
+		  
+		 $(".js-programmatic-multi-set-val").on("click", function () { $exampleMulti.val(["WU", "WY"]).trigger("change"); });
+		 $(".js-programmatic-multi-clear").on("click", function () { $exampleMulti.val(null).trigger("change"); });
+		 </script>
+		 
+		 
+		  <div class="col-sm-6 form-group">
+		            <label class="col-sm-4 control-label">自定义结果匹配：</label>
+		           <div class="col-sm-8">
+		                   		<select class="js-example-matcher-start form-control">
+								  <option value="3620194" selected="selected">select2/select2</option>
+								</select>
+		            </div>
+		 </div>
+		 <script>
+		 function matchStart (term, text) {
+			  if (text.toUpperCase().indexOf(term.toUpperCase()) == 0) {
+			    return true;
+			  }
+
+			  return false;
+			}
+
+			$.fn.select2.amd.require(['select2/compat/matcher'], function (oldMatcher) {
+			  $(".js-example-matcher-start").select2({
+			    matcher: oldMatcher(matchStart)
+			  })
+			});
+		 </script>
+		 
+		 
+		 
+		 	  <div class="col-sm-6 form-group">
+		            <label class="col-sm-4 control-label">模板修改，添加图片</label>
+		           <div class="col-sm-8">
+		                   		<select class="js-example-templating form-control">
+								  <option value="3620194" selected="selected">select2/select2</option>
+								  <option value="3620194" selected="selected">select2/select2</option>
+								  <option value="3620194" selected="selected">select2/select2</option>
+								  <option value="3620194" selected="selected">select2/select2</option>
+								</select>
+		                </div>
+		       </div>
+		            <script>
+		            function formatState (state) {
+		            	  if (!state.id) { return state.text; }
+		            	  var $state = $(
+		            	    '<span><img src="vendor/images/flags/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
+		            	  );
+		            	  return $state;
+		            	};
+
+		            	$(".js-example-templating").select2({
+		            	  templateResult: formatState
+		            	});
+		            
+		            </script>
+		            
+  
+</body>
+</html>

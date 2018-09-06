@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>FileInput Demo</title>
+	 <script type="text/javascript" src="/cd-demo/static/jquery/jquery-1.11.1.min.js"></script>
+	 <link rel="stylesheet" type="text/css" href="/cd-demo/static/bootstrap/css/bootstrap.css">
+	 <script type="text/javascript" src="/cd-demo/static/layer/layer.js"></script>
+	 <!--#include virtual="/cd-demo/include/fileinput.html" -->
+	 <!--  引入文件 jqeuery bootstrap样式   fileinput js css zh -->
+</head>
+<body style="margin:40px 100px;">
+	  <!-- fileinput 导入框 -->
+	  <p>提交到后台 后台返回相关的message</p>
+    <div class="toolbar row">
+        <div class="col-sm-8">
+            <div class="btn-group">
+                <input id="fileinput" type="file" class="control" /><!-- 输入框的样式 -->
+            </div>
+        </div>
+    </div>
+    <script>
+    $(function(){
+    	//导入框
+ 	   $('#fileinput').fileinput({
+            language: 'zh', //设置语言
+            uploadUrl: "/cd-demo/upload.do", //上传的地址,访问的接口地址
+            allowedFileExtensions: ['xls', 'xlsx'],//接收的文件后缀
+            showPreview: false,//是否显示预览
+            uploadAsync: true, //默认异步上传
+           // showRemove : true, //显示移除按钮
+           // showCaption: false,//是否显示标题
+           // dropZoneEnabled: false,//是否显示拖拽区域
+             maxFileCount: 1,//表示允许同时上传的最大文件个数
+            browseClass: "btn btn-primary", //按钮样式
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"
+            
+           }).on('fileerror', function(event, data, msg) {
+        	   //异步上传返回错误结果处理
+     	    layer.alert("只接受后缀名为xls和xlsx文件！");
+        	   
+     	  }).on("filebatchuploadsuccess", function(event, data) {////批量同步上传成功结果处理
+     		 var response = data.response;
+             console.log(event);
+             layer.alert(response.message);//后台返回传入的数据
+            // alert("jj");
+     	  }); 
+    });
+    </script>
+</body>
+</html>

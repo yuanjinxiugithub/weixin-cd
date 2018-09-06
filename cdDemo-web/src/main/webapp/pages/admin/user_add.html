@@ -1,0 +1,144 @@
+  <!--#include virtual="/cd-demo/include/h-ui.html" -->
+  <!--  当前用户信息-->
+  <div class="warpper">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 我的面板 <span class="c-gray en">&gt;</span>用户信息 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="container-fluid ">
+	       <ul id="myTab" class="nav nav-tabs">
+				<li class="active">
+				   <a href="#add" data-toggle="tab">
+				                           添加用户
+				   </a>
+				</li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+		    <!--用户信息  -->
+			<!-- <div class="tab-pane fade in active" id="info">
+			       <form class="form-horizontal" id="lookForm" method="post" style="margin-top:20px;">
+				        <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">工号:</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"  readonly="readonly"  name="userId" >
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">姓名:</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"  readonly="readonly" name="name" >
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">邮箱：</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"    name="email" >
+				                </div>
+				       </div>
+				        <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">手机：</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"   name="tel" >
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">备注：</label>
+				                <div class="col-sm-8">
+				                  <textarea cols="24" rows="2" class="form-control" name="remarks"></textarea>
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">用户类型：</label>
+				                <div class="col-sm-8" >
+				                  <div class="col-sm-4" > <input type="radio" name="userType" value="0"/>系统管理员</div>
+				                  <div class="col-sm-3" > <input type="radio" name="userType" value="2">教师</div>
+				                  <div class="col-sm-3" > <input type="radio" name="userType" value="1">学生</div>
+				               </div>
+				       </div>
+				      <div class="row">
+				            <div class="form-group col-sm-12 text-center">
+				                <a  href="javascript:UserList.saveUpdate();" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;保存</a>
+				            </div>
+				        </div>
+				    </form>
+			</div> -->
+			<!-- 添加用户 -->
+			<div class="tab-pane fade in active" id="add">
+				  <form class="form-horizontal" id="userAddForm" method="post" style="margin-top:20px;">
+				        <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label"><span style="color:red">*</span>工号:</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"  name="userId" id="addUserId">
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label"><span style="color:red">*</span>姓名:</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"  name="name" id="addName" readonly placeholder="根据工号获取">
+				                </div>
+				       </div>
+				        <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label"><span style="color:red">*</span>组织名称:</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"  name="beloyClassName" id="beloyClassName" readonly placeholder="根据工号获取">
+				                   <input  type="hidden"  name="beloyClass" id="beloyClass" >
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label"><span style="color:red">*</span>密码：</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="password"  name="pwd"  id="pwd" >
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label"><span style="color:red">*</span>确认密码：</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="password"  name="againPwd">
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">邮箱：</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"   name="email" >
+				                </div>
+				       </div>
+				        <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">手机：</label>
+				                <div class="col-sm-8">
+				                   <input  class="form-control" type="text"  name="tel">
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label">备注：</label>
+				                <div class="col-sm-8">
+				                  <textarea cols="24" rows="4" class="form-control" name="remarks"></textarea>
+				                </div>
+				       </div>
+				       <div class="row col-sm-10  form-group">
+				                <label class="col-sm-4 control-label"><span style="color:red">*</span>用户类型：</label>
+				                <div class="col-sm-8" >
+				                  <select class="form-control" name="userType" id="userType">
+				                     <option value="">请选择</option>
+				                     <option value="0">系统管理员</option>
+				                     <option value="2">教师</option>
+				                     <option value="1">学生</option>
+				                  </select>
+				               </div>
+				       </div>
+				      <div class="row">
+				            <div class="col-sm-12 form-group  text-center">
+				                 <button class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;确定</button>&nbsp;&nbsp;&nbsp;
+				                <button class="btn btn-default  btn-sm" type="reset" ><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;&nbsp;重置</button>&nbsp;&nbsp;&nbsp;
+				                 <a href="user-list.html"  class="btn btn-default btn-sm" ><span class="glyphicon glyphicon-backward"></span>返回</a>
+				            </div>
+				        </div>
+				    </form>
+			</div>
+	</div>
+    </div>
+ </div>   
+ <script type="text/javascript" src="../js/form-validate.js"></script>
+ <script type="text/javascript" src="../js/user-list.js"></script>
+  <script>
+  $(function(){
+  });
+  </script>
+</body>
+</html>

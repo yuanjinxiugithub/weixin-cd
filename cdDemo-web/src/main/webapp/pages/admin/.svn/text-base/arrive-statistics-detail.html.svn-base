@@ -1,0 +1,63 @@
+  <!--#include virtual="/cd-demo/include/h-ui.html" -->
+  <!-- 点到管理-->
+  <div class="warpper">
+     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>点到服务<span class="c-gray en">&gt;</span>统计详情<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+     <div class="page-container">
+        <div id="container" style="min-width:500px;height:400px"></div>
+        <div class="row col-sm-12" style="margin:25px auto;color:red">温馨提示:该课程到课率在70%，低于学校规定，希望教师能督促学生到课情况。</div>
+    </div>
+  </div>
+  <!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/cd-demo/static/lib/hcharts/Highcharts/5.0.6/js/highcharts.js"></script>
+<script type="text/javascript" src="/cd-demo/static/lib/hcharts/Highcharts/5.0.6/js/modules/exporting.js"></script>
+  <script>
+  $(function () {
+	    Highcharts.chart('container', {
+	        title: {
+	            text: '数据结构到课率',
+	            x: -20 //center
+	        },
+	        subtitle: {
+	            text: '来源: 武汉纺织大学',
+	            x: -20
+	        },
+	        xAxis: {
+	            categories: ['第一周', '第二周', '第三周', '第四周', '第五周', '第六周','第七周', '第八周']
+	        },
+	        yAxis: {
+	            title: {
+	                text: '人数(人)'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        tooltip: {
+	            valueSuffix: '人'
+	        },
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            borderWidth: 0
+	        },
+	        series: [{
+	            name: '未到人数',
+	            data: [2,1,3,5,1,2,1,0]
+	        }, {
+	            name: '请假人数',
+	            data: [0,1,3,5,0,1,3,1]
+	        }, {
+	            name: '应到人数',
+	            data: [30,30,30,30,30,30,30,30]
+	        },{
+	            name: '实到人数',
+	            data: [28,29,27,25,29,28,29,30]
+	        }]
+	    });
+	});
+  </script>
+</body>
+</html>

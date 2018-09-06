@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+<script type="text/javascript" src="/mes-demo/static/jquery/jquery.js"></script><!-- jquery引入 -->
+<script type="text/javascript" src="/mes-demo/static/validate/jquery.validate.min.js"></script><!--jquery validate引入  -->
+<script type="text/javascript" src="/mes-demo/static/validate/jquery-validate-message-zh.js"></script><!-- jquery validate中文包引入 -->
+<link rel="stylesheet" type="text/css" href="/mes-demo/static/bootstrap/css/bootstrap.css"><!-- bootstrap样式 -->
+<script type="text/javascript" src="/mes-demo/static/validate/validate-ex.js"></script><!-- 自定义验证方法 -->
+ <!--#include virtual="/mes-demo/include/datetimepicker.html" -->
+<style>
+#register-form{  
+    border: 1px solid rgb(197, 197, 197);  
+    width:1200px;
+    margin:10px auto;  
+    border-image: none;  
+    padding: 30px;  
+    border-radius: 3px;  
+}  
+.help-block{
+   color:#843635;
+ }
+ 
+</style>
+</head>
+<body style="padding: 30px;">
+   <div class="explain" style="color:red">
+    <h4 style="margin-left:30px;">使用validate配置参数填写验证的规则，验证提示信息,将校验规则写到 js 代码中.</h4>
+   </div>
+   <form id="register-form" role="form" class="form-horizontal" method="get">  
+    	<div class="row">
+	        <div class="form-group col-sm-6" >  
+	            <label class="col-sm-4 control-label"><span></span>编号：</label>  
+	            <div class="col-sm-8">  
+	                <input type="text" class="form-control" id="billnum" name="billnum"  required  />  
+	            </div>  
+	        </div>  
+	        <div class="form-group col-sm-6">  
+	            <label class="col-sm-4 control-label">邮箱验证:</label>  
+	            <div class="col-sm-8">  
+	                <input type="text" class="form-control" id="billname" name="billname"  required />  
+	            </div>  
+	        </div>  
+       </div>
+       <div class="row">
+	        <div class="form-group col-sm-6">  
+	            <label class="col-sm-4 control-label">手机验证：</label>  
+	            <div class="col-sm-8">  
+	                <input type="text" class="form-control" id="billtype" name="billtype" required  />  
+	            </div>  
+	        </div>  
+	        <div class="form-group col-sm-6">  
+	            <label class="col-sm-4 control-label">单据描述：</label>  
+	            <div class="col-sm-8">  
+	                 <select class="form-control" name="billdesc" required >
+	                 	  <option value="">请选择</option>
+	                      <option value="W1001">完工入库单</option>
+	                      <option value="W1002">库存调拨单</option>
+	                      <option value="W1003">备品备件领料单</option>
+					</select>  
+	            </div>  
+	        </div>  
+       </div>
+        <div class="row">
+	        <div class="form-group col-sm-6">  
+	            <label class="col-sm-4 control-label">设置状态：</label>  
+	            <div class="col-sm-8">  
+	                <input type="checkbox"  name="check"  required/>是
+	                &nbsp;&nbsp;
+	                <input type="checkbox"  name="check"  />否
+	            </div>  
+	        </div>  
+	        <div class="form-group col-sm-6">  
+	            <label class="col-sm-4 control-label">权限控制：</label>  
+	            <div class="col-sm-8">  
+	                 <select class="form-control" name="billqx" required>
+	                 	  <option value="">请选择</option>
+	                      <option value="W1001">完工入库单</option>
+	                      <option value="W1002">库存调拨单</option>
+	                      <option value="W1003">备品备件领料单</option>
+					</select>  
+	            </div>  
+	        </div>  
+       </div>
+       <div class="row">
+	        <div class="form-group col-sm-6 has-feedback">  
+	            <label class="col-sm-4 control-label">计划开始时间：</label>
+                <div class="col-sm-8">
+	                   <input id="ConirmedStartDate" type="text" name="planstart"  class="form-control"  placeholder="请选择计划开始日期"/>
+                       <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                </div>
+	        </div>  
+	        <div class="form-group col-sm-6 has-feedback">  
+	            <label class="col-sm-4 control-label">计划结束时间：</label>
+                <div class="col-sm-8 ">
+	                   <input id="ConirmedEndDate" type="text" name="planend" class="form-control"  placeholder="请选择计划结束日期"/>
+                       <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                </div>
+	        </div>  
+       </div>
+        <div class="form-group text-center">  
+            <div class="col-md-12">  
+                <button type="submit" class="btn btn-primary btn-sm">提交</button>  
+                <button type="reset" class="btn btn-primary btn-sm">重置</button>  
+            </div>  
+        </div>  
+    </form>  
+    <script type="text/javascript">
+    $(document).ready(function() {  
+    	  $('#ConirmedStartDate').datetimepicker({
+  		    format: "Y-m-d H:i",
+  	        hours24: 'true',
+  	        step: 10,
+  	        });
+  	  $('#ConirmedEndDate').datetimepicker({
+  		    format: "Y-m-d H:i",
+  	        hours24: 'true',
+  	        step: 10,
+  	  });
+    	
+       var validator=  $("#register-form").validate({  
+	    debug: true, //调试模式取消submit的默认提交功能   
+        focusInvalid: false, //当为false时，验证无效时，没有焦点响应  
+        errorElement : 'div',  //错误元素
+        errorClass : 'help-block col-sm-12 col-sm-offset-4',  //类名
+        rules : {  //验证规则填写
+          // 每一个name值对应一组规则
+           billnum:{
+        	   required:true,
+            //   remote: ''    // ajax请求地址
+           }, 
+           billname:{
+        	   required:true,
+        	   email:true,
+           }, 
+           billtype:{
+        	   required:true,
+        	   //使用自定义的手机号码验证规则	
+        	   mobile:"mobile",
+           },
+           billdesc:{
+        	   required:true,
+           },
+           check :{
+        	   required:true,
+           },
+           billqx:{
+        	   required:true,
+           },
+           planstart:{
+        	   required:true,
+           },
+           planend:{
+        	   required:true,
+        	   compareDate: "#ConirmedStartDate"  
+           }
+           
+        },  
+        messages : {  //验证提示信息
+            billnum : {
+            	 required : "必填字段", 
+            },  
+            billname : {  
+                required : "必填字段", 
+                email:"邮箱格式错误"
+            },
+            billtype : {  
+            	 required : "必填字段",  
+            	 mobile:"手机号格式错误"
+            },  
+            billdesc : {  
+            	 required : "必选字段",  
+            },  
+            check:{
+            	 required : "必须选择设置状态",  
+            },
+            billqx:{
+            	 required : "必须选择一项",  
+            },
+            planstart:{
+         	   required:"请填写计划开始时间",
+            },
+            planend:{
+         	   required:"请填写计划结束时间",
+         	  compareDate:"结束日期必须大于开始日期!"
+            }
+            
+        },  
+        errorPlacement : function(error, element) {  
+        	//指明错误放置的位置，默认情况是：error.appendTo(element.parent());即把错误信息放在验证的元素后面
+        	  element.closest('.form-group').append(error);
+        },  
+        highlight : function(element) {  
+            $(element).closest('div').addClass('has-error');  
+        },  
+       success: function(label) {  
+            label.prev('div').removeClass('has-error');  
+            label.remove();  
+       },  
+        submitHandler: function(form) {
+            alert("正在提交!");  
+            //验证通过提交代码
+        },
+    });
+    	$("button[type=reset]").click(function(){
+	       		//validator.resetForm();//重置表单
+	       		$("#register-form").resetForm()
+	       	})
+});  
+    </script>
+</html>

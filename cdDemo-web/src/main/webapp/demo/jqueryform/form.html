@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>JQuery - Load</title>
+    <script src="/mes-demo/static/jquery/jquery-1.11.1.min.js"></script>
+    <style type="text/css">
+        #header {
+          margin-bottom: 1em;
+          padding-bottom: 1em;
+          border-bottom: 1px solid #eee;
+        }
+        .buttonListArea {
+          float: left;
+          width: 150px;
+          padding-right: 10px;
+          border-right: 1px solid #eee;      
+          margin-right: 10px;
+        }
+        .buttonArea {
+          margin: 10px;
+          padding-bottom:20px;
+        }
+        #load_content {
+          float: left;
+          width: 550px;
+          text-align:center;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btnLoad1.button').click(function() {
+                $('#load_content').load('content1.html');
+            });
+            $('#btnLoad2.button').click(function() {
+                $('#load_content').load('content2.html');
+            });
+        });
+        
+        
+    </script>
+</head>
+<body>
+
+<form id="form1" runat="server">
+
+<div id="container">
+
+    <div id="header">
+        <h2>JQuery Load Example</h2>
+    </div>
+
+    <div class="buttonListArea">
+        <div class="buttonArea">
+            <div class="button" id="btnLoad1">Load 1</div>
+        </div>
+        
+        <div class="buttonArea">
+            <div class="button" id="btnLoad2">Load 2</div>
+        </div>
+    </div>
+    
+    <div id="load_content">
+        <h2>这是要被加载的区域</h2>
+    </div>
+
+</div>
+
+</form>
+
+</body>
+</html>

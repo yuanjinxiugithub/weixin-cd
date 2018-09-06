@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/profiles
+END
+sso.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/profiles/sso.properties
+END
+redis.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/profiles/redis.properties
+END
+important.properties
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/profiles/important.properties
+END
+zookeeper.properties
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-web/src/main/profiles/zookeeper.properties
+END

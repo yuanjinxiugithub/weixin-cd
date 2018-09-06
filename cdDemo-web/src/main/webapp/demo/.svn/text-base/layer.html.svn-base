@@ -1,0 +1,26 @@
+<!--#include virtual="/mes-demo/include/header.html" -->
+<div style="height:400px; margin-top:200px;" class="text-center">
+<a href="javascript:void(0);" class="btn btn-primary" onclick="edit('弹出层','/mes-demo/quality/quality_control/management_system/index.html','1','800','500')">弹出层</a>
+<a href="javascript:void(0);" class="btn btn-primary" onclick="testalert()">测试提示框</a>
+<a href="javascript:void(0);" class="btn btn-primary" onclick="testconfirm()">测试confirm</a>
+</div>
+<script type="text/javascript">
+//弹出层
+function edit(title,url,id,w,h){
+    layer_show(title,url,w,h);
+}
+//提示框
+function testalert(){
+	sysAlert("保存成功!",function(){
+	   });
+}
+//confirm、loading
+function testconfirm() {
+	sysConfirm("确定？", function () {
+		sysLoading();
+		closeAlert();
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!-- jquery  js -->
+<script type="text/javascript" src="/cd-demo/static/jquery/jquery.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/jquery/jquery-1.11.1.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery-2.1.4.min.js"></script>
+<!-- bootstrap js  -->
+<script type="text/javascript"
+	src="/cd-demo/static/bootstrap/js/bootstrap.js"></script>
+
+<!-- layer js -->
+<script type="text/javascript" src="/cd-demo/static/layer/layer.js"></script>
+
+
+<!--validate js -->
+<script type="text/javascript"
+	src="/cd-demo/static/validate/jquery.validate.min.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/validate/jquery-validate-message-zh.js"></script>
+<!-- jqGrid js -->
+<script type="text/javascript"
+	src="/cd-demo/static/jqGrid/js/i18n/grid.locale-en.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/jqGrid/js/jquery.jqGrid.min.js"></script>
+
+<!-- datatables js -->
+<script type="text/javascript"
+	src="/cd-demo/static/datatables/js/datatables.min.js"></script>
+
+<!-- jsTree js -->
+<script type="text/javascript"
+	src="/cd-demo/static/jsTree/jstree.min.js"></script>
+
+<!-- jquery-ui js -->
+<script type="text/javascript"
+	src="/cd-demo/static/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- datepicker js -->
+<script type="text/javascript"
+	src="/cd-demo/static/datapicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/datapicker/bootstrap-datepicker.zh-CN.min.js"></script>
+
+<!-- fileinput js -->
+<script type="text/javascript"
+	src="/cd-demo/static/fileinput/fileinput.min.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/fileinput/fileinput_locale_zh.js"></script>
+
+<!-- jqprint js -->
+<script type="text/javascript"
+	src="/cd-demo/static/jqprint/jquery.jqprint-0.3.js"></script>
+
+
+<!-- bmsmart js -->
+<script type="text/javascript" src="/cd-demo/static/bmsmart/mes-base.js"></script>
+<script type="text/javascript" src="/cd-demo/static/bmsmart/sysmain.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/bmsmart/jquery.formHelp.js"></script>
+<script type="text/javascript"
+	src="/cd-demo/static/bmsmart/datatables-pack.js"></script>
+
+<!-- datetimepicker js -->
+<script type="text/javascript"
+	src="/cd-demo/static/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+
+<!-- slimscroll js -->
+<script type="text/javascript"
+	src="/cd-demo/static/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!--h-ui  -->
+<script type="text/javascript" src="/cd-demo/static/h-ui/js/H-ui.min.js"></script>
+
+
+<!-- ace scripts -->
+<script src="/cd-demo/static/assets/js/ace-elements.min.js"></script>
+<script src="/cd-demo/static/assets/js/ace.min.js"></script>
+<!-- ace settings handler -->
+<script src="/cd-demo/static/assets/js/ace-extra.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery-ui.custom.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery.easypiechart.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery.sparkline.index.min.js"></script>
+<!-- <script src="/cd-demo/static/assets/js/jquery.flot.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery.flot.pie.min.js"></script>
+<script src="/cd-demo/static/assets/js/jquery.flot.resize.min.js"></script>
+ -->

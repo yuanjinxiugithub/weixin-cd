@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.SysUserDao">
+	<sql id="SysUserInfoColumns">
+		a.id AS "id",
+		a.user_id AS "userId",
+		a.pwd AS "pwd",
+		a.login_name AS "loginName",
+		a.name AS "name",
+		a.email AS "email",
+		a.tel AS "tel",
+		a.user_type AS "userType",
+		a.user_img AS "userImg",
+		a.last_ip AS "lastIp",
+		a.last_login_time AS "lastLoginTime",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.del_flag AS "delFlag",
+		a.open_id AS "openId",
+		a.remark AS "remarks",
+		a.belong_class AS "beloyClass",
+		a.belong_class_name AS "beloyClassName"
+	</sql>
+	<sql id="SysUserInfoJoins">
+		a.id AS "id",
+		a.user_id AS "userId",
+		a.pwd AS "pwd",
+		a.login_name AS "loginName",
+		a.name AS "name",
+		a.email AS "email",
+		a.tel AS "tel",
+		a.user_type AS "userType",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.del_flag AS "delFlag",
+		a.open_id AS "openId",
+		a.remark AS "remarks",
+		a.belong_class AS "beloyClass",
+		a.belong_class_name AS "beloyClassName"
+	</sql>
+    
+	<select id="get" resultType="SysUserInfo">
+		SELECT 
+			<include refid="SysUserInfoColumns"/>
+		FROM sys_user a 
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="SysUserInfo">
+		SELECT 
+			<include refid="SysUserInfoColumns"/>
+		FROM sys_user a  
+		<where>
+			a.del_flag = '0'
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="SysUserInfo">
+		SELECT 
+			<include refid="SysUserInfoColumns"/>
+ 	    FROM sys_user a 
+		<where>	
+				 a.del_flag = '0' 
+		</where>
+	</select>
+	
+	<select id="getByOpenId" resultType="SysUserInfo">
+		SELECT 
+		<include refid="SysUserInfoColumns"/>
+ 	    FROM sys_user a 
+		<where>	
+				 a.del_flag ='0' and a.open_id = #{openId}
+		</where>
+	 </select>
+	 
+	 <select id="getByUserId" resultType="SysUserInfo">
+		SELECT 
+		<include refid="SysUserInfoColumns"/>
+ 	    FROM sys_user a 
+		<where>	
+		   a.del_flag ='0' and  a.user_id = #{userId}
+		</where>
+	 </select>
+	 
+	<update id="delete">
+		UPDATE sys_user SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+		
+	<insert id="insert">
+		INSERT INTO sys_user(
+			id,
+			user_id,
+			pwd,
+			login_name,
+			name,
+			email,
+			tel,
+			user_type,
+			user_img,
+			last_ip,
+			last_login_time,
+			create_user,
+			create_time,
+			update_user,
+			update_time,
+			del_flag,
+			open_id,
+			belong_class,
+			belong_class_name
+		) VALUES (
+			#{id},
+			#{userId},
+			#{pwd},
+			#{loginName},
+			#{name},
+			#{email},
+			#{tel},
+			#{userType},
+			#{userImg},
+			#{lastIp},
+			#{lastLoginTime},
+			#{createUser},
+			#{createTime},
+			#{updateUser},
+			#{updateTime},
+			#{DEL_FLAG_NORMAL},
+			#{openId},
+			#{beloyClass},
+			#{beloyClassName}			
+		)
+	</insert>
+	
+	  <update id="update">
+		UPDATE sys_user SET 	
+		    open_id = #{openId},
+		    remark = '1',
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE user_id = #{userId}
+	</update>  
+	
+	<update id="remove">
+		UPDATE sys_user SET
+		    open_id = '', 	
+		    remark = '0',
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE user_id = #{userId}
+	</update>  
+	
+	 <update id="updateUserInfo">
+		UPDATE sys_user SET 	
+		    email = #{email},
+		    tel = #{tel},
+		    user_type = #{userType},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+</mapper>

@@ -1,0 +1,6 @@
+<!-- jquery-datetimepicker css  -->
+<link rel="stylesheet" type="text/css" href="/cd-demo/static/datetimepicker-master/jquery.datetimepicker.css">
+
+<!-- jquery-datetatepicker js  -->  
+ <script type="text/javascript" src="/cd-demo/static/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+ 

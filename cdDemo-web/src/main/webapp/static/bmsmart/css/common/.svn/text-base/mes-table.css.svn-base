@@ -1,0 +1,16 @@
+ /*自定义table样式  一般的整张表 可以用到*/
+   .tab {
+			 	border:1px solid #999999;
+			 	border-collapse:collapse;
+			    margin:0 auto;
+			    border-spacing:0px;
+			    width:770px
+			 }
+
+     .tab tr  td,th{
+            	border:1px solid #999999 ;
+            	padding:4px;
+            	min-width:80px;
+            	text-align: center;
+            	height:34px;
+            	}

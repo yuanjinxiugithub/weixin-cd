@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>FileInput Demo</title>
+	 <script type="text/javascript" src="/cd-demo/static/jquery/jquery-1.11.1.min.js"></script>
+	 <link rel="stylesheet" type="text/css" href="/cd-demo/static/bootstrap/css/bootstrap.css">
+	 <script type="text/javascript" src="/cd-demo/static/layer/layer.js"></script>
+	 <!--#include virtual="/cd-demo/include/fileinput.html" --><!--引入fileinput 文件  -->
+	 <!--  引入文件 jqeuery bootstrap样式   fileinput js css zh -->
+</head>
+<body style="margin:40px 100px;">
+			<div class="warp container kv-main" style="margin:20px 60px;" >
+			 <form enctype="multipart/form-data">
+                <input id="file-0" class="file" type="file" multiple data-min-file-count="1">
+                <br>
+                <button type="submit" class="btn btn-primary">上传</button>
+                <button type="reset" class="btn btn-default">删除</button>
+            </form>
+		</div>
+		<script type="text/javascript">
+			 $("#file-0").fileinput({
+			 	 language: 'zh', //设置语言
+			 	 uploadUrl: '/cd-demo/upload.do', // you must set a valid URL here else you will get an error
+			 	/* initialPreview:[
+			 	"<img src='/images/moon.jpg' class='file-preview-image' alt='The Moon' title='The Moon'>",
+                "<img src='/images/earth.jpg' class='file-preview-image' alt='The Earth' title='The Earth'>",
+			 	] *///,//设置默认的预览图
+			 	overwriteInitial: false,//是否能修改初始化预览图
+			 	 slugCallback: function(filename) {
+		            return filename.replace('(', '_').replace(']', '_');   //这是文件名替换
+		        },
+			    'allowedFileExtensions' : ['jpg', 'png','gif'],//可接受的图片后缀名
+			    });
+			    $("#file-0").on("filebatchuploadsuccess", function(event, data) {////批量同步上传成功结果处理
+		     		 var response = data.response;
+		             console.log(event);
+		             layer.alert(response.message);//后台返回传入的数据
+		     	  }); 
+		</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>demo4--使用标签的前缀和后缀</title>
+
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" href="css/jqueryui.min.css" />
+<link rel="stylesheet" href="css/jquery-ui-slider-pips.min.css" />
+<style>
+#scale-slider.ui-slider {
+  border-radius: 0px;
+  background: #c7cdd5;
+  border: none;
+  height: 2px;
+  margin: 1em 4em 4em; }
+  
+  #scale-slider.ui-slider .ui-slider-range {
+    background: linear-gradient(to right, #434d5a 0%, #00c7d7 50%, #434d5a 100%)
+    border: 1px solid rgba(67, 77, 90, 0.5);
+    height: 4px;
+    top: -1px;
+    transition: all 0.2s ease-out; }
+                    
+#scale-slider .ui-slider-handle {
+  border-radius: 2px;
+  height: 20px;
+  width: 12px;
+  top: -26px;
+  border: none; }
+  
+  #scale-slider .ui-slider-handle:nth-of-type(n+1) {
+    transform: rotateZ(-10deg);
+    margin-left: -9px; }
+  
+  #scale-slider .ui-slider-handle:nth-of-type(n+2) {
+    transform: rotateZ(10deg);
+    margin-left: -3px; }
+  
+  #scale-slider .ui-slider-handle:after {
+    content: "";
+    border: 6px solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -11px;
+    border-top-color: #434d5a; }
+  
+  #scale-slider .ui-slider-handle.ui-slider-handle.ui-state-focus:after,
+  #scale-slider .ui-slider-handle.ui-slider-handle.ui-state-hover:after,
+  #scale-slider .ui-slider-handle.ui-slider-handle.ui-state-active:after {
+    border-top-color: #00c7d7; }
+                    
+#scale-slider .ui-slider-pip {
+  top: 2px; }
+  
+  #scale-slider .ui-slider-pip .ui-slider-label {
+    display: none;
+    background: rgba(67, 77, 90, 0);
+    color: #434d5a;
+    border-radius: 4px;
+    padding: 0.3em 0;
+    width: 2.4em;
+    margin-left: -1.2em;
+    transition: all 0.2s ease-out; }
+  
+  #scale-slider .ui-slider-pip .ui-slider-line {
+    height: 4px; }
+  
+  #scale-slider .ui-slider-pip:nth-of-type(5n+3) .ui-slider-line {
+    height: 8px; }
+  
+  #scale-slider .ui-slider-pip:nth-of-type(10n+3) .ui-slider-line {
+    height: 12px; }
+  
+  #scale-slider .ui-slider-pip:nth-of-type(10n+3) .ui-slider-label {
+    top: 16px;
+    display: block; }
+  
+  #scale-slider .ui-slider-pip.ui-slider-pip-last .ui-slider-line {
+    margin-left: -1px; }
+  
+  #scale-slider .ui-slider-pip.ui-slider-pip-selected .ui-slider-label, 
+  #scale-slider .ui-slider-pip.ui-slider-pip-selected-first .ui-slider-label, 
+  #scale-slider .ui-slider-pip.ui-slider-pip-selected-second .ui-slider-label {
+    background: rgba(67, 77, 90, 0.7);
+    color: #fffaf7; }
+</style>
+</head>
+
+<body>
+             你记录的值是: <span id="output"></span>
+	<p style="height: 30px;"></p>
+	<!-- <div class="scale-slider" style="width: 90%; margin: 0 auto"></div> -->
+	<div id="scale-slider"  style="width: 99%; margin: 0 auto"></div>
+	
+	<script src="js/jquery-plus-ui.min.js"></script>
+	<script src="js/bower-libs.min.js"></script>
+	<script src="js/jquery-ui-slider-pips.js"></script>
+	<script src="js/helpers.js"></script>
+	<script src="js/examples.js"></script>
+	<!-- <script src="js/styling.js"></script> -->
+	<!-- <script src="js/app.js"></script> -->
+	<script>
+		$(function() {
+			$("#scale-slider")
+		    .slider({
+		        max: 50,
+		        min: -50,
+		        values: [-20, 20],
+		        range: true
+		    })
+		    .slider("pips", {
+		        rest: "label"
+		    })
+		 // and whenever the slider changes, lets echo out the month
+		 .on("slidechange", function(e,ui) {//获取选中的值
+			 console.log(ui.values[0]);
+			 console.log(ui.values[1]);
+            $("#output").text("左值："+ ui.values[0]+"右值："+ ui.values[1]);
+           });
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>解析json动态生成checkbox</title>
+		<script type="text/javascript" src="/cd-demo/static/jquery/jquery.js"></script>
+		<!-- jquery 文件 -->
+</head>
+<body>
+        <h4>动态生成checkbox 后台传入的json数据包括 name value 以及state表示是否选中</h4>
+		<div class="box" style="margin:20px;">
+				<div id="tagList"></div><!-- 标签 存放位置-->
+		</div>
+	<script type="text/javascript">
+			$(function(){
+            $.getJSON("list.json",{},function(data){
+	             $.each(data.list,function(i,li){
+	              	var str ="";
+	              	for(var i=0;i<li.tag.length;i++){
+	              		str+="<input type='checkbox' name='checkTheme' value='"+li.tag[i].tagId+"'"+((li.tag[i].tagStatus == "1") ? "checked='checked'"  
+	                          : "") + ">" + li.tag[i].tagName + "<br />";  
+	              	}
+	              $("#tagList").append("<div id='tag_"+li.topic+"'>" +str+ "</div>"); 
+	                });
+	             });
+			});
+		</script>
+</body>
+</html>

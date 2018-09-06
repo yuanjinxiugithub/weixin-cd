@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.DemoTestDao">
+
+    <resultMap id="DemoTestResultMap" type="com.bmsmart.mes.mesDemo.domain.po.DemoTest">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Column_List">
+        <![CDATA[
+         id,name
+        ]]>
+    </sql>
+<select id="get" resultMap="DemoTestResultMap">
+		SELECT 
+			<include refid="Column_List"/>
+		FROM DEMO_TEST a
+		WHERE a.id = #{id}
+	</select>
+    <select id="selectDemoTest" resultMap="DemoTestResultMap">
+        <![CDATA[
+        SELECT
+        ]]>
+        <include refid="Column_List"></include>
+        <![CDATA[
+        FROM DEMO_TEST
+        WHERE 1=1
+         ]]>
+    </select>
+    
+  <delete id="delete" parameterType="map" >
+    delete from DEMO_TEST info
+    where Id = #{id,jdbcType=INTEGER}
+      and username = #{username,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bmsmart.mes.mesDemo.domain.po.DemoTest" >
+    insert into DEMO_TEST  (id,name
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+  <insert id="insertBatch"  parameterType="java.util.List">  
+    
+    insert into DEMO_TEST  (id,name  ) 
+    values  
+    <foreach collection="list" item="item" index="index" separator="," >  
+        (#{item.id},#{item.name})  
+    </foreach>  
+</insert>  
+
+ <delete id="batchDelete" parameterType="String">
+        delete from DEMO_TEST where id in
+        <foreach item="idItem" collection="list" open="(" separator="," close=")">
+            #{idItem}
+        </foreach>
+    </delete>
+</mapper>

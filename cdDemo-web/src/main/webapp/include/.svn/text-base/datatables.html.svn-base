@@ -1,0 +1,7 @@
+<!-- datatables 引入文件 -->
+
+<!-- datatables  css-->
+<link rel="stylesheet" type="text/css" href="/cd-demo/static/datatables/css/datatables.min.css">
+
+<!-- datatables js -->
+<script type="text/javascript" src="/cd-demo/static/datatables/js/datatables.min.js"></script>

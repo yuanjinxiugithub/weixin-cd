@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/course_design/!svn/ver/315/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao
+END
+SysUserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/course_design/!svn/ver/379/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/SysUserDao.java
+END
+MdmCourseTimeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/course_design/!svn/ver/315/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmCourseTimeDao.java
+END
+MdmIstrDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/course_design/!svn/ver/291/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmIstrDao.java
+END
+SysLogDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/course_design/!svn/ver/270/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/SysLogDao.java
+END
+CdArriveDetailDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/course_design/!svn/ver/263/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/CdArriveDetailDao.java
+END
+DemoTestDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/DemoTestDao.java
+END
+MdmStudentDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/course_design/!svn/ver/308/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmStudentDao.java
+END
+SysIFileDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/course_design/!svn/ver/289/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/SysIFileDao.java
+END
+CdNoticeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/course_design/!svn/ver/252/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/CdNoticeDao.java
+END
+MdmCourseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/course_design/!svn/ver/155/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmCourseDao.java
+END
+MdmClassDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/course_design/!svn/ver/111/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmClassDao.java
+END
+CdleaveDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/course_design/!svn/ver/326/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/CdleaveDao.java
+END
+MdmTimeTableDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/course_design/!svn/ver/390/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmTimeTableDao.java
+END
+CdCourseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/course_design/!svn/ver/400/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/CdCourseDao.java
+END
+MdmAddrDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/course_design/!svn/ver/129/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmAddrDao.java
+END
+MdmTeacherDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/course_design/!svn/ver/129/ssm/cdDemo/cdDemo-dao/src/main/java/com/bmsmart/mes/mesDemo/dao/MdmTeacherDao.java
+END

@@ -1,0 +1,35 @@
+{
+	"list": [{
+			"topic": "dsgfdg",
+			"tag": [{
+				"tagId": 67,
+				"tagName": "checkbox1",
+				"tagStatus": ""
+			}]
+		},
+		{
+			"topic": "蓝色多瑙河",
+			"tag": [{
+					"tagId": 63,
+					"tagName": "checkbox2",
+					"tagStatus": "1"
+				},
+				{
+					"tagId": 59,
+					"tagName": "checkbox3",
+					"tagStatus": ""
+				},
+				{
+					"tagId": 60,
+					"tagName": "checkbox4",
+					"tagStatus": ""
+				},
+				{
+					"tagId": 61,
+					"tagName": "checkbox5",
+					"tagStatus": "1"
+				}
+			]
+		}
+	]
+}

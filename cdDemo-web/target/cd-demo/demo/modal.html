@@ -1,0 +1,46 @@
+<!--#include virtual="/mes-demo/include/header.html" -->
+<div style="height:500px; margin-top:200px;" class="text-center">
+<!-- 按钮 -->
+<button class="btn btn-primary btn-sm" data-toggle="modal"  data-target="#addmodal"><span class="glyphicon glyphicon-ok"></span>提交</button>
+<!--模态框内的内容  -->
+<div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+             </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    专检任务信息维护
+                </h4>
+         </div>
+            <div class="modal-body">
+                        <form class="form-horizontal" role="form" >
+                      <div class="row">
+                          <div class="form-group col-sm-12">
+                              <label class="control-label col-md-4">下一步骤：</label>
+                              <div class="col-md-8">
+                                  <select id="task"  class="form-control">
+						          <option  value="任务分配">任务分配</option>
+						          <option  value="任务接受">任务接受</option>
+       						      </select>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                   </div>
+            <div class="modal-footer"> 
+             <a class="btn btn-primary btn-sm" onclick="Sumbit()" class="glyphicon glyphicon-ok">&nbsp;提交</a>
+          </div>
+          </div>
+             </div>
+         </div>
+  </div>
+ <script type="text/javascript">
+ $('#addmodal').modal({
+     show : false,//加载一次 index.html 到容器内
+     backdrop : false,//按下 esc 不关闭
+   //  keyboard : true,//初始化隐藏，如果是按钮点击触发，第一次点击则无法显示，第二次显示。
+}); 
+ </script>
+</body>
+</html>

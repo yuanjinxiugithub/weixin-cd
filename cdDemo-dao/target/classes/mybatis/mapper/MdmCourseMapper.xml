@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.MdmCourseDao">
+	<sql id="MdmCourseInfoColumns">
+		a.id AS "id",
+		a.code AS "code",
+		a.name AS "name",
+		a.class_code AS "classCode",
+		a.parent_code AS "parentCode",
+		a.teacher_code AS "teacherCode",
+		a.teacher_name AS "teacherName",
+		a.adder_code AS "adderCode",
+		a.class_time AS "classTime",
+		a.status AS "status",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.remark AS "remarks",
+		a.del_flag AS "delFlag"
+	</sql>
+	<sql id="MdmCourseInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="MdmCourseInfo">
+		SELECT 
+			<include refid="MdmCourseInfoColumns"/>
+		FROM mdm_course a
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="MdmCourseInfo">
+		SELECT 
+			<include refid="MdmCourseInfoColumns"/>
+		FROM mdm_course a
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="name!= null">
+               and a.name LIKE  concat('%', #{name},'%')
+            </if>	
+            <if test="code!= null">
+               and a.code LIKE  concat('%', #{code},'%')
+            </if>
+            <if test="classCode!= null">
+               and a.class_code = #{classCode}
+            </if>	
+            <if test="teacherCode!= null">
+               and a.teacher_code = #{teacherCode}
+            </if>	
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="MdmCourseInfo">
+		SELECT 
+			<include refid="MdmCourseInfoColumns"/>
+		FROM  mdm_course a
+		<where>	
+			a.del_flag = '0'
+			<if test="name!= null">
+               and a.name LIKE  concat('%', #{name},'%')
+            </if>	
+            <if test="code!= null">
+               and a.code LIKE  concat('%', #{code},'%')
+            </if>
+            <if test="classCode!= null">
+               and a.class_code = #{classCode}
+            </if>
+             <if test="teacherCode!= null">
+               and a.teacher_code = #{teacherCode}
+            </if>
+		</where>
+		order by a.create_time desc
+	</select>
+	
+	<update id="delete">
+		UPDATE mdm_course SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="insert">
+		INSERT INTO mdm_course(
+			id,
+			code,
+			name,
+			class_code,
+			parent_code,
+			teacher_code,
+			teacher_name,
+			adder_code,
+			class_time,
+			status,
+			create_user,
+			create_time,
+			update_user,
+			update_time,
+			remark,
+			del_flag
+		) VALUES (
+			#{id},
+			#{code},
+			#{name},
+			#{classCode},
+			#{parentCode},
+			#{teacherCode},
+			#{teacherName},
+			#{adderCode},
+			#{classTime},
+			#{status},
+			#{createUser},
+			#{createTime},
+			#{updateUser},
+			#{updateTime},
+			#{remarks},
+			#{DEL_FLAG_NORMAL}
+		)
+	</insert>
+	
+   <update id="update">
+		UPDATE mdm_course SET 	
+		    code = #{code},
+		    name = #{name},
+		    class_code = #{classCode},
+		    teacher_code = #{teacherCode},
+		    parent_code = #{parentCode},
+		    adder_code = #{adderCode},
+		    class_time = #{classTime},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+	
+</mapper>

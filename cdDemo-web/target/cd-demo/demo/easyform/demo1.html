@@ -1,0 +1,149 @@
+ <!--#include virtual="/cd-demo/include/header.html" -->
+ <!--#include virtual="/cd-demo/include/datetimepicker.html" -->
+ <!--#include virtual="/cd-demo/include/select2.html" -->
+ 
+    <link rel="stylesheet" href="js/easyform/easyform.css">
+    <script src="js/easyform/easyform.js"></script>
+    
+<div class="container-fluid panel-custom panel panel-default animated fadeInRight">
+    <!-- 鐢熶骇璁″垝澧炲姞 -->
+    <div class="row">
+        <!-- 鏍囬鏍�  -->
+        <div class="col-sm-12">
+            <h4 class="page-header">鐢熶骇璁″垝澧炲姞</h4>
+        </div>
+    </div>
+    <!-- 鏂板琛ㄥ崟 -->
+    <div class="row">
+    <form class="form-horizontal" id="demo-form" method="post">
+        <div class="row">
+            <div class="col-sm-6 form-group ">
+                <label class="col-sm-4 control-label">鐢ㄦ埛鍚嶏細</label>
+                <div class="col-sm-8">
+                   <input name="uid" type="text" class="form-control"  id="uid" data-easyform="length:4 16;char-normal;real-time;"  data-message="鐢ㄦ埛鍚嶈緭鍏ユ湁璇�"
+                               data-easytip="position:right;class:easy-blue;">
+                </div>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">鍒涘缓浜哄憳锛�</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" readonly="readonly"/>
+                </div>
+             </div>
+        </div>
+        
+	    <div class="row">
+		     <div class="col-sm-6 form-group">
+		         <label class="col-sm-4 control-label">鐢熶骇璁㈠崟鍙凤細</label>
+		         <div class="col-sm-8">
+		            <input type="text" class="form-control" name="orderid" placeholder="璇疯緭鍏ョ敓浜ц鍗曞彿" />
+		         </div>
+		     </div>
+		     <div class="col-sm-6 form-group">
+		         <label class="col-sm-4 control-label">璁㈠崟绫诲瀷锛�</label>
+		         <div class="col-sm-8">
+		            <select class="form-control oredertype" name="oredertype" >
+		            	<option value="">--璇烽�夋嫨璁㈠崟绫诲瀷--</option>
+		            	<option value="鐢熶骇璁㈠崟">--鐢熶骇璁㈠崟--</option>
+		            	<option value="璇曞埗璁㈠崟">--璇曞埗璁㈠崟--</option>
+		            </select>
+		         </div>
+		 </div>    
+            
+        </div>
+ 
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">浜у搧鍚嶇О锛�</label>
+                <div class="col-sm-8">
+                     <select class="form-control" name="productionname" id="productionname">
+		            	<option value="">--璇烽�夋嫨浜у搧鍚嶇О--</option>
+		            	<option value="鐢熶骇璁㈠崟">--浜у搧A--</option>
+		            	<option value="璇曞埗璁㈠崟">--浜у搧B--</option>
+		            </select>
+                </div>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">浜у搧缂栫爜锛�</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" readonly="readonly"/>
+                </div>
+             </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">璁㈠崟鏁伴噺锛�</label>
+                <div class="col-sm-8">
+                   <input type="number" class="form-control" name="num" placeholder="璇疯緭鍏ヨ鍗曟暟閲�" />
+                </div>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">璁㈠崟鐘舵�侊細</label>
+                <div class="col-sm-8">
+                   <select class="form-control orderstate" name="orderstate">
+	                  <option value="">--璇烽�夋嫨璁㈠崟鐘舵��--</option>
+	                  <option value="璁″垝">--璁″垝--</option>
+	                  <option value="涓嬭揪">--涓嬭揪--</option>
+	                  <option value="寮�濮�">--寮�濮�--</option>
+	                  <option value="缁撴潫">--缁撴潫--</option>
+                  </select>
+                </div>
+             </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6 form-group has-feedback">
+                <label class="col-sm-4 control-label">璁″垝寮�濮嬫椂闂达細</label>
+                <div class="col-sm-8">
+	                   <input id="ConirmedStartDate" type="text" name="planstart"  class="form-control"  placeholder="璇烽�夋嫨璁″垝寮�濮嬫棩鏈�"  data-easytip="position:right;class:easy-blue;"/>
+                       <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                </div>
+            </div>
+            <div class="col-sm-6 form-group  has-feedback">
+                <label class="col-sm-4 control-label">璁″垝缁撴潫鏃堕棿锛�</label>
+                <div class="col-sm-8">
+	                   <input id="ConirmedEndDate" type="text" name="planend" class="form-control"  placeholder="璇烽�夋嫨璁″垝缁撴潫鏃ユ湡"  data-easytip="position:top;class:easy-blue;"/>
+                       <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+                </div>
+             </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">鐢熶骇杞﹂棿锛�</label>
+                <div class="col-sm-8">
+                   <select class="form-control" name="chejian" id="chejian" >
+		            	<option value="">--璇烽�夋嫨鐢熶骇杞﹂棿--</option>
+		            	<option value="鍑嗗杞﹂棿">--鍑嗗杞﹂棿--</option>
+		            	<option value="缁囧竷杞﹂棿">--缁囧竷杞﹂棿--</option>
+		            	<option value="鏁寸悊杞﹂棿">--鏁寸悊杞﹂棿--</option>
+		            </select>
+                </div>
+            </div>
+            <div class="col-sm-6 form-group">
+                <label class="col-sm-4 control-label">鍚堝悓鍙凤細</label>
+                <div class="col-sm-8">
+                    <input type="text"  class="form-control"     placeholder="璇疯緭鍏ュ悎鍚屽彿"   data-easytip="position:top;class:easy-blue;" />
+                </div>
+             </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-sm-12 text-center">
+               <input value="纭畾	" type="submit" class="btn btn-primary" >
+                <a class="btn btn-default"  onclick="" ><span class=""></span>鍙栨秷</a>
+            </div>
+        </div>
+    </form>
+   </div>
+   </div>
+   <script>
+   $(function(){
+	   var v = $('#demo-form').easyform();
+
+       
+   });
+   </script>
+ </body>
+</html>

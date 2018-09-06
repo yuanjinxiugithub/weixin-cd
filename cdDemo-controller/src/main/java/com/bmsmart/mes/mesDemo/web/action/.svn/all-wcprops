@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/course_design/!svn/ver/307/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action
+END
+MdmCourseController.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/course_design/!svn/ver/286/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmCourseController.java
+END
+CdArriveController.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/430/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/CdArriveController.java
+END
+CasClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/course_design/!svn/ver/286/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/CasClient.java
+END
+SysLogsController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/273/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/SysLogsController.java
+END
+CdLeaveController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/369/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/CdLeaveController.java
+END
+MdmClassController.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/178/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmClassController.java
+END
+MdmTimeTableController.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/course_design/!svn/ver/286/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmTimeTableController.java
+END
+CdCourseController.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/392/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/CdCourseController.java
+END
+MdmAddrController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/184/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmAddrController.java
+END
+MdmTeacherController.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/course_design/!svn/ver/307/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmTeacherController.java
+END
+SysUserController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/377/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/SysUserController.java
+END
+MdmCourseTimeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/course_design/!svn/ver/286/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmCourseTimeController.java
+END
+SysFileController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/328/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/SysFileController.java
+END
+PlatformClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/course_design/!svn/ver/422/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/PlatformClient.java
+END
+MdmIstrController.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/178/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmIstrController.java
+END
+TestController.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/TestController.java
+END
+MdmStudentController.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/course_design/!svn/ver/307/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/MdmStudentController.java
+END
+CdNoticeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/328/ssm/cdDemo/cdDemo-controller/src/main/java/com/bmsmart/mes/mesDemo/web/action/CdNoticeController.java
+END

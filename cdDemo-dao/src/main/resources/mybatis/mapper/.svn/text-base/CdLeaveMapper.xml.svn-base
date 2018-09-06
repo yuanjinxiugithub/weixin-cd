@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.CdleaveDao">
+	<sql id="CdLeaveDetailInfoColumns">
+		a.id AS "id",
+		a.leave_id AS "leaveId",
+		a.student_code AS "studentCode",
+		a.student_name AS "studentName",
+		a.student_class AS "studentClass",
+		a.class_name AS "className",
+		a.leave_time AS "leaveTime",
+		a.file_id AS "fileId",
+		a.leave_reason AS "leaveReason",
+		a.is_check AS "isCheck",
+		a.status AS "stauts",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.del_flag AS "delFlag",
+		a.time_code_name AS "timeCodeName",
+		a.time_code AS "timeCode",
+		a.course_name AS "courseName",
+		a.course_code AS "coureCode",
+		a.teacher_code AS "teacherCode",
+		a.teacher_name AS "teacherName"
+	</sql>
+	<sql id="CdLeaveDetailInfoJoins">
+		a.id AS "id",
+		a.leave_id AS "leaveId",
+		a.student_code AS "studentCode",
+		a.student_name AS "studentName",
+		a.student_class AS "studentClass",
+		a.class_name AS "className",
+		a.leave_time AS "leaveTime",
+		a.file_id AS "fileId",
+		a.leave_reason AS "leaveReason",
+		a.is_check AS "isCheck",
+		a.status AS "stauts",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.del_flag AS "delFlag",
+		a.time_code_name AS "timeCodeName",
+		a.time_code AS "timeCode",
+		a.course_name AS "courseName",
+		a.course_code AS "coureCode",
+		a.teacher_code AS "teacherCode",
+		a.teacher_name AS "teacherName"
+	</sql>
+    
+	<select id="get" resultType="CdLeaveDetailInfo">
+		SELECT 
+			<include refid="CdLeaveDetailInfoColumns"/>
+		FROM cd_leave_detail a 
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="CdLeaveDetailInfo">
+		SELECT 
+			<include refid="CdLeaveDetailInfoColumns"/>
+		FROM cd_leave_detail a  
+		<where>
+			a.del_flag = '0'
+		</where>
+	</select>
+	
+	<!-- 已经审核的 列表!-->
+	<select id="findByMap" resultType="CdLeaveDetailInfo">
+		SELECT 
+			<include refid="CdLeaveDetailInfoJoins"/>
+ 	    FROM cd_leave_detail a 
+		<where>	
+				 a.del_flag = '0' and a.is_check='1'
+             <if test="studentName!= null and studentName != ''">
+               and a.student_name like concat('%',#{studentName},'%')
+            </if>
+            <if test="studentCode!= null and studentCode != ''">
+               and a.student_code like concat('%',#{studentCode},'%')
+            </if>
+             <if test="className!= null and className != ''">
+               and a.class_name like concat('%',#{className},'%')
+            </if>
+             <if test="courseName!= null and courseName != ''">
+               and a.course_name like concat('%',#{courseName},'%')
+            </if>
+             <if test="teacherCode!= null and teacherCode != ''">
+               and a.teacher_code = #{teacherCode}
+            </if> 
+		</where>
+		order by a.create_time desc
+	</select>
+	
+	<!-- 没有审核的 列表!-->
+	<select id="findByMapNo" resultType="CdLeaveDetailInfo">
+		SELECT 
+			<include refid="CdLeaveDetailInfoJoins"/>
+ 	    FROM  cd_leave_detail a 
+		<where>	
+				a.del_flag = '0' and a.is_check='0' 
+		    <if test="studentName!= null and studentName != ''">
+               and a.student_name like concat('%',#{studentName},'%')
+            </if>
+            <if test="studentCode!= null and studentCode != ''">
+               and a.student_code like concat('%',#{studentCode},'%')
+            </if>
+             <if test="className!= null and className != ''">
+               and a.class_name like concat('%',#{className},'%')
+            </if>
+             <if test="courseName!= null and courseName != ''">
+               and a.course_name like concat('%',#{courseName},'%')
+            </if>
+            <if test="teacherCode!= null and teacherCode != ''">
+               and a.teacher_code = #{teacherCode}
+            </if> 
+		</where>
+		order by a.create_time desc
+	</select>
+	
+	<!-- 查询请假的学生的列表 !-->
+	<select id="findByMapLeave" resultType="CdLeaveDetailInfo">
+		SELECT 
+			<include refid="CdLeaveDetailInfoJoins"/>
+ 	    FROM  cd_leave_detail a LEFT JOIN cd_course b ON a.leave_id = b.id
+		<where>	
+				a.del_flag = '0'  
+		    <if test="leaveId!= null and leaveId != ''">
+               and a.leave_id = #{leaveId}
+            </if>
+		</where>
+	</select>
+	
+	<update id="delete">
+		UPDATE cd_leave_detail SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="insert">
+		INSERT INTO cd_leave_detail(
+			id,
+			student_code,
+			student_name,
+			student_class,
+			class_name,
+			leave_time,
+			file_id,
+			leave_reason,
+			del_flag,
+			create_user,
+			create_time,
+			time_code_name,
+			time_code,
+			course_code,
+			course_name,
+			teacher_code,
+			teacher_name
+		) VALUES (
+			#{id},
+			#{studentCode},
+			#{studentName},
+			#{studentClass},
+			#{className},
+			#{leaveTime},
+			#{fileId},
+			#{leaveReason},
+			#{DEL_FLAG_NORMAL},
+			#{createUser},
+			#{createTime},
+			#{timeCodeName},
+			#{timeCode},
+			#{coureCode},
+			#{courseName},
+			#{teacherCode},
+			#{teacherName}
+		)
+	</insert>
+	  <update id="update">
+		UPDATE cd_leave_detail SET 	
+		    is_check = #{isCheck},
+		    status = #{stauts},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+	
+	<update id="updateStatus">
+		UPDATE cd_leave_detail SET 	
+		    is_check = '1',
+		    status = #{stauts},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+</mapper>

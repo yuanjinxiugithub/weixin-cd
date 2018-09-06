@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>demo3--使用标签的前缀和后缀</title>
+
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" href="css/jqueryui.min.css" />
+<link rel="stylesheet" href="css/jquery-ui-slider-pips.min.css" />
+<style>
+/* #steps-fivepercent-slider .ui-slider-tip {
+	visibility: visible;
+	opacity: 1;
+	top: -30px;
+} */
+</style>
+</head>
+
+<body>
+             你记录的值是: <span id="output"></span>
+	<p style="height: 30px;"></p>
+	<div class="slider" style="width: 90%; margin: 0 auto"></div>
+	
+	<script src="js/jquery-plus-ui.min.js"></script>
+	<script src="js/bower-libs.min.js"></script>
+	<script src="js/jquery-ui-slider-pips.js"></script>
+	<script src="js/helpers.js"></script>
+	<script src="js/examples.js"></script>
+	<!-- <script src="js/styling.js"></script> -->
+	<!-- <script src="js/app.js"></script> -->
+	<script>
+		$(function() {
+			$(".slider").slider({
+				min : 0, //设置最大值
+				max : 1000, //设置最小值
+				range : true,//是否使用双向滑动
+				values : [ 200, 800 ],//设置多个默认值
+			    step:5,//设置间隔值   default为1
+			}).slider("pips", {
+				rest : "label",//是否显示下标
+			    //prefix: "$",//设置前缀
+				suffix: "码",//设置后缀
+				 step: 5,//设置间隔值  default为1   刻度值为 两个step相乘
+			})
+
+			.slider("float");//使用的数据类型
+		})
+		  // and whenever the slider changes, lets echo out the month
+		 .on("slidechange", function(e,ui) {//获取选中的值
+            $("#output").text( ui.value );
+    });
+	</script>
+</body>
+</html>

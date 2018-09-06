@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+	<title>Schedule</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<!-- 使用了jquery bootstrap -->
+	<style type="text/css">
+			*{
+			  margin: 0;
+			  padding: 10px;
+			}
+		  #tab1{
+			 	border:1px solid #999999;
+			 	border-collapse:collapse;
+			    margin:0 auto;
+			    border-spacing:0px;
+			    color:black;
+			 }
+             #tab1 tr  td,th{
+             	border:1px solid #999999 ;
+             	min-width:33px;
+             	text-align: center;
+             	height:30px;
+             	
+             	}
+         	 #tab1 tr th{
+         	 	min-width: auto;
+         	 	height:40px;
+         	 	font-size: 22px;
+         	 	line-height: 40px;
+         	 	color:black;
+             	}
+             	
+	</style>
+	</head>
+	    <body>
+	    <h4>解析json生成table,但日期是通过js动态生成 点击左右的按钮 会动态生成日期 这部分js代码在js/schedule.js。 通过ajax传入页面的年，月，后台返回对应的json数据 可以动态生成table内容</h4>
+		<table id="tab1">
+                    <thead >
+                         <tr><th colspan="36">
+                         	<span class="lastmonth" style="float:left;cursor:pointer;"><</span>
+                         	<span id='title'><label id="cur_year"></label>年<label id="cur_month"></label>月份整理车间倒班表</span>
+                         	<span class="nextmonth" style="float:right;cursor:pointer;">></span>
+                         </th></tr>                    	
+                    </thead>
+                    <tbody>
+                    	<tr id="weekday"></tr><!--日期通过js 自动生成的-->
+                    	<tr id="day"></tr>
+                    </tbody>
+				</table>
+		<script src="js/jquery.min.js" type="application/javascript" language="javascript">  </script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="js/schedule.js" ></script>
+	    <script type="text/javascript">
+         $(function(){
+		   	   $("#cur_year").text(thisyear);
+		   	   $("#cur_month").text(thismonth);
+		   	   //填充表格 参数是这个月的天数 默认是当前的月份
+		   	   
+		   	   setcalender(getdaysinonemonth(thisyear,thismonth));
+
+              //上个月
+		   	   $(".lastmonth").click(function(){                 
+	 			 	thismonth--;
+	 			 	if(thismonth==0){
+	 			 		thismonth=12;
+	 			 		thisyear--;
+	 			 	}
+	 			 	$("#cur_year").text(thisyear);
+		   	        $("#cur_month").text(thismonth);
+		   	        //需要重新绑定table
+		   	          setcalender(getdaysinonemonth(thisyear,thismonth));
+	 			 });
+              
+	 			 //下个月
+	 			  $(".nextmonth").click(function(){                 
+	 			 	thismonth++;
+				 	if(thismonth==13){
+				 		thismonth=1;
+				 		thisyear++;
+				 	}
+	 			 	$("#cur_year").text(thisyear);
+		   	        $("#cur_month").text(thismonth);
+		   	         //需要重新绑定table
+		   	         setcalender(getdaysinonemonth(thisyear,thismonth));
+	 			 });
+	 				 			 
+	 			 var datas  ={"bumen1":
+	 			             [
+	 			                { "name":"整理运转"},
+						        {
+						            "banci": "早",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转甲班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        },
+						        {
+						            "banci": "中",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转乙班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        }
+						    ],
+						    "bumen2":
+						    [
+	 			                { "name":"整理成捡"},
+						        {
+						            "banci": "早",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转甲班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        },
+						        {
+						            "banci": "中",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转乙班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        }
+						    ],
+						      "bumen3": 
+						     [
+	 			                { "name":"整理收付"},
+						        {
+						            "banci": "早",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转乙班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        },
+						        {
+						            "banci": "中",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转甲班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        },
+						        {
+						            "banci": "晚",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转乙班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        }],
+	 			                "bumen4":
+	 			             [
+	 			                { "name":"整理运转"},
+						        {
+						            "banci": "早",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转甲班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        },
+						        {
+						            "banci": "中",
+						            "data":["1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1","2","3","4","5","1"],
+						            "ban":"运转乙班",
+						            "workday":"27.94",
+						            "weekday":"27.94"
+						        }
+						    ],
+	 			 };
+	 			  
+	 			 //解析json数据
+	 			  for(key in datas)
+	 			  {
+	 			  	var tr = $("<tr></tr>");
+	 			  	
+	 			  	var rows = datas[key].length-1;
+	 			  	
+	 			  	var td1 = $('<td rowspan="'+rows+'">'+datas[key][0].name+'</td>')
+	 			 	    tr.append(td1);
+	 			 	
+	 			 	var td1  = $('<td>'+datas[key][1].banci+'</td>');
+	 			 	    tr.append(td1);
+	 			     
+	 			     for(var i =0 ;i<datas[key][1].data.length;i++)
+	 			     {
+	 			     	var td = $('<td>'+datas[key][1].data[i]+'</td>');
+	 			 	    tr.append(td);
+	 			     }
+	 			     var td = $('<td>'+datas[key][1].ban+'</td>');
+ 			 	   	    tr.append(td);
+ 			 	     var td = $('<td>'+datas[key][1].workday+'</td>');
+ 			 	   	    tr.append(td);
+ 			 	     var td = $('<td>'+datas[key][1].weekday+'</td>');
+ 			 	   	    tr.append(td);
+	 			     
+	 			    var tr2 = new Array();
+	 			 	var td2 = new Array();
+	 			 	
+	 			 	for(var j=2;j<datas[key].length;j++)
+	 			 	{
+	 			 	     tr2[j] = $("<tr></tr>");
+	 			 		 td2[j] = $('<td>'+datas[key][j].banci+'</td>');
+	 			 		 tr2[j].append(td2[j]);
+	 			 		
+	 			 		for(var k=0;k<datas[key][j].data.length;k++)
+	 			 		{
+	 			 		 	var td = $('<td>'+datas[key][j].data[k]+'</td>');
+	 			 	         tr2[j].append(td);
+	 			 		 }
+	 			 		
+	 			 		var td = $('<td>'+datas[key][j].ban+'</td>');
+	 			 	     tr2[j].append(td);
+	 			 	     var td = $('<td>'+datas[key][j].workday+'</td>');
+	 			 	     tr2[j].append(td);
+	 			 	     var td = $('<td>'+datas[key][j].weekday+'</td>');
+	 			 	     tr2[j].append(td);
+	 			 	}
+	 			 	 
+	 			 	
+	 			 	 $("#tab1").append(tr);
+	 			 	 
+	 			 	 for(var i=0;i<tr2.length;i++){
+	 			 		$("#tab1").append(tr2[i]);
+	 			 	 }
+	 			 	 
+	 			    var white = $('<tr><td colspan="36"></td></tr>');
+	 			    $("#tab1").append(white);
+	 			 
+	 			  }
+		   });
+		   
+	    </script>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.MdmCourseTimeDao">
+	<sql id="MdmCourseTimeColumns">
+		a.id AS "id",
+		a.code AS "code",
+		a.name AS "name",
+		a.week AS "week",
+		a.time_range AS "timeRange",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.remark AS "remarks",
+		a.del_flag AS "delFlag",
+		a.week_name AS "weekName"
+	</sql>
+    
+	<select id="get" resultType="MdmCourseTimeInfo">
+		SELECT 
+			<include refid="MdmCourseTimeColumns"/>
+		FROM mdm_course_time a
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="MdmCourseTimeInfo">
+		SELECT 
+			<include refid="MdmCourseTimeColumns"/>
+		FROM mdm_course_time a
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="MdmCourseTimeInfo">
+		SELECT 
+			<include refid="MdmCourseTimeColumns"/>
+		FROM  mdm_course_time a
+		<where>	
+			a.del_flag = '0'
+			<if test="name!= null">
+               and a.name LIKE  concat('%', #{name},'%')
+            </if>	
+            <if test="code!= null">
+               and a.code LIKE  concat('%', #{code},'%')
+            </if>
+		</where>
+		order by a.create_time desc
+	</select>
+	
+	<update id="delete">
+		UPDATE mdm_course_time SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="insert">
+		INSERT INTO mdm_course_time(
+			id,
+			code,
+			name,
+			week,
+			time_range,
+			create_user,
+			create_time,
+			update_user,
+			update_time,
+			remark,
+			del_flag,
+			week_name
+		) VALUES (
+			#{id},
+			#{code},
+			#{name},
+			#{week},
+			#{timeRange},
+			#{createUser},
+			#{createTime},
+			#{updateUser},
+			#{updateTime},
+			#{remarks},
+			#{DEL_FLAG_NORMAL},
+			#{weekName}
+		)
+	</insert>
+	
+   <update id="update">
+		UPDATE mdm_course_time SET 	
+		    code = #{code},
+		    name = #{name},
+		    week = #{week},
+		    week_name = #{weekName},
+		    time_range = #{timeRange},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+	
+</mapper>

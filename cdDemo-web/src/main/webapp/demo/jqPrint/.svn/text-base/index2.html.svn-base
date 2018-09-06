@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>jqprint</title>
+<script language="javascript" src="jquery-1.4.4.min.js"></script>
+<script language="javascript" src="jquery.jqprint-0.3.js"></script>
+<!-- 
+如果您使用的是高版本jQuery调用下面jQuery迁移辅助插件即可
+<script src="http://www.jq22.com/jquery/jquery-migrate-1.2.1.min.js"></script>
+-->
+<link rel="stylesheet" href="print.css" media="print" /><!--打印时使用的css样式  -->
+
+<script language="javascript">
+    $(function(){
+    	$(".print").click(function(){
+    		$("#tab1").jqprint({
+    			 debug: false, 
+    			 importCSS: true, 
+    			 printContainer: true, 
+    			 operaSupport: false
+    		});
+    	});
+    });
+</script>
+</head>
+<body>
+	<div class="content">
+	   <div class="title">我是title 不需要打印</div>
+	   <div class="body">
+	       <table id="tab1">
+	        <tr>
+	        	<th>姓名</th>
+	        	<th>年龄</th>
+	        	<th>籍贯</th>
+	        	<th>性别</th>
+	        </tr>
+	       <tr>
+	       	<td>1</td>
+	       	<td>2</td>
+	       	<td>3</td>
+	       	<td>4</td>
+	       </tr>
+	       <tr>
+	       	<td>1</td>
+	       	<td>2</td>
+	       	<td>3</td>
+	       	<td>4</td>
+	       </tr>
+	       </table>
+	   </div>
+	   <button class="print">打印</button>
+	</div>
+</body>
+</html>

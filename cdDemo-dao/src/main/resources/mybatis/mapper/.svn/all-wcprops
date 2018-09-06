@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/course_design/!svn/ver/315/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper
+END
+SysUserMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/course_design/!svn/ver/379/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/SysUserMapper.xml
+END
+MdmCourseTimeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/course_design/!svn/ver/381/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmCourseTimeMapper.xml
+END
+SysFileMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/course_design/!svn/ver/289/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/SysFileMapper.xml
+END
+MdmIstrMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/course_design/!svn/ver/367/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmIstrMapper.xml
+END
+SysLogMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/course_design/!svn/ver/289/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/SysLogMapper.xml
+END
+CdArriveDetailMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/course_design/!svn/ver/433/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/CdArriveDetailMapper.xml
+END
+MdmStudentMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/course_design/!svn/ver/367/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmStudentMapper.xml
+END
+DemoTestMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/DemoTestMapper.xml
+END
+CdNoticeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/course_design/!svn/ver/326/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/CdNoticeMapper.xml
+END
+MdmCourseMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/course_design/!svn/ver/367/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmCourseMapper.xml
+END
+CdLeaveMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/course_design/!svn/ver/367/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/CdLeaveMapper.xml
+END
+MdmClassMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/course_design/!svn/ver/367/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmClassMapper.xml
+END
+MdmTimeTableMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/course_design/!svn/ver/393/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmTimeTableMapper.xml
+END
+CdCourseMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/course_design/!svn/ver/432/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/CdCourseMapper.xml
+END
+MdmAddrMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/course_design/!svn/ver/367/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmAddrMapper.xml
+END
+MdmTeacherMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/course_design/!svn/ver/374/ssm/cdDemo/cdDemo-dao/src/main/resources/mybatis/mapper/MdmTeacherMapper.xml
+END

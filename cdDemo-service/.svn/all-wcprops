@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/course_design/!svn/ver/389/ssm/cdDemo/cdDemo-service
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/course_design/!svn/ver/98/ssm/cdDemo/cdDemo-service/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/course_design/!svn/ver/98/ssm/cdDemo/cdDemo-service/.project
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-service/pom.xml
+END

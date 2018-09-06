@@ -1,0 +1,225 @@
+<!--#include virtual="/mes-demo/include/header.html" -->
+<style>
+.tab-pane{
+padding:10px 10px;
+}
+input[type=radio],input[type=checkbox]  {  
+    display: inline-block;  
+    vertical-align: middle;  
+    width: 18px;  
+    height: 18px;  
+    -webkit-appearance: none;  
+    background-color: transparent;  
+    border: 0;  
+    outline: 0 !important;  
+    line-height: 18px;  
+    color: #d8d8d8;  
+} 
+input[type=radio]:after  {  
+    content: "";  
+    display:block;  
+    width: 18px;  
+    height: 18px;  
+    border-radius: 50%;  
+    text-align: center;  
+    line-height: 12px;  
+    font-size: 16px;  
+    color: #fff;  
+    border: 2px solid #ddd;  
+    background-color: #fff;  
+    box-sizing:border-box;  
+}  
+input[type=radio]:checked:after  {  
+    content: "L";  
+    transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);  
+    -webkit-transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);  
+    border-color: #37AF6E;  
+    background-color: #37AF6E;  
+}    
+.selected{
+background-color:red;
+}
+</style>
+<div class="warpper animated fadeInRight" onkeydown="SysManage.searchButton()">
+<div class="container-fluid panel-custom panel panel-default">
+    <!-- 生产计划管理 -->
+    <div class="row">
+        <!-- 标题栏  -->
+        <div class="col-sm-12">
+            <h4 class="page-header">客户端应用管理</h4>
+        </div>
+    </div>
+    
+    <!-- 快捷查询条件 -->
+    <form class="form-horizontal" id="sysForm"  method="post"  >
+     <!-- 搜索 -->
+        <div class="row">
+            <div class="col-sm-5 form-group">
+                <label class="col-sm-5 control-label">应用名称:</label>
+                <div class="col-sm-7">
+                   <input type="text" class="form-control" name="appName" id="appName" />
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <a href="javascript:SysManage.searchButton()"  class="btn btn-primary btn-sm" ><span class="glyphicon glyphicon-search"></span>查询</a>
+            </div>
+            
+        </div>
+    </form>
+       <!-- 操作按钮组 -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group btn-group-sm pull-right">
+                <a class="btn btn-primary btn-sm" href='add.html'><span class="glyphicon glyphicon-plus"></span>创建</a>
+                <button class="btn btn-primary"  onclick="Test.editInit()"  data-toggle="modal"  ><span class="glyphicon glyphicon-edit"></span>编辑</button>
+                <a class="btn btn-primary btn-sm" href='javascript:Test.del()'><span class="glyphicon glyphicon-trash"></span>删除</a>
+            </div>
+        </div>
+    </div>
+    <!--  查询生成表单-->
+    <div class="row" >
+        <div class="col-sm-12 ">
+          <div class="tab-content">
+               <!-- 已发布列表  -->
+		          <table id="sysTable"  class="table table-striped table-hover table-condensed table-bordered auto-tab tab-center" style="width:100%">
+		              <thead>
+		                  <tr>
+		                      <th>序号</th>
+		                      <th>选择</th>
+		                      <th>AppId</th>
+		                      <th>应用名称</th>
+		                      <th>版本号</th>
+		                      <th>应用描述</th>
+		                      <th>强制更新</th>
+		                      <th>总下载量</th>
+		                      <th>创建人</th>
+		                      <th>创建时间</th>
+		                  </tr>
+		              </thead>
+		              <tbody></tbody>
+		          </table>
+		    </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="test.js"></script>
+    <script>
+      $(function(){
+          Test.loadTable();
+         //  $('#sysTable tbody').on( 'click', 'tr', function () {
+       		  //$("tbody input:radio").  
+       		 /*$("tbody input:radio").removeAttr("checked");
+       		  if($('tbody tr').find("input[type='radio']").is(':checked')){
+       			 // $("tbody input:radio").removeAttr("checked");
+       			$(this).find("input[type='radio']").attr("checked",true);
+       		  }else{
+       		  } */
+       	//	  } );  
+         
+      }); 
+      
+    </script>
+ </body>
+ 
+ <!-- 查询的模态框（Modal） -->
+<div class="modal fade" tabindex="-1"  id="editModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					编辑信息
+				</h4>
+			</div>
+			<div class="modal-body"  style="height:420px;">
+				   <form class="form-horizontal"  id="updateForm" method="post">
+				        <input type="hidden" name="id"  id="id"/>
+				        <div class="row">
+				            <div class="col-sm-1"></div>
+				            <div class="col-sm-8 form-group ">
+				                <label class="col-sm-4 control-label">AppID：</label>
+				                <div class="col-sm-8"> 
+				                   <input type="text" class="form-control" placeholder="请输入应用ID" readonly="readonly" id="appId" name="appId"/>
+				                </div>
+				            </div>
+				        </div>
+				        
+					    <div class="row">
+					         <div class="col-sm-1"></div>
+						     <div class="col-sm-8 form-group">
+						         <label class="col-sm-4 control-label">应用名称：</label>
+						         <div class="col-sm-8">
+						            <input type="text" class="form-control" id="appName" name="appName" placeholder="请输入应用名称" readonly="readonly" />
+						         </div>
+						     </div>
+				        </div>
+				 
+				        <div class="row">
+				              <div class="col-sm-1"></div>
+				              <div class="col-sm-8 form-group">
+						         <label class="col-sm-4 control-label">版本号：</label>
+						         <div class="col-sm-8">
+						           	  <input type="text"  id="appVersion" name="appVersion" class="form-control" placeholder="请输入版本号" readonly="readonly"/>
+						         </div>
+						 </div>    
+				        </div>
+				        <div class="row">
+				                 <div class="col-sm-1"></div>
+							     <div class="col-sm-8 form-group">
+							              <label class="col-sm-4 control-label">创建人：</label>
+							              <div class="col-sm-8">
+							                   <input type="text"  id="createUser" name="createUser" class="form-control"  readonly="readonly"/>
+							               </div>
+							     </div>
+				        </div>
+				        <div class="row">
+				                 <div class="col-sm-1"></div>
+							     <div class="col-sm-8 form-group">
+							              <label class="col-sm-4 control-label">创建时间：</label>
+							              <div class="col-sm-8">
+							                   <input   id="createTime"    class="form-control"   readonly="readonly" />
+							               </div>
+							     </div>
+				        </div>
+				        <div class="row">
+				                 <div class="col-sm-1"></div>
+							     <div class="col-sm-8 form-group">
+							              <label class="col-sm-4 control-label"><span style="color:red;">*</span>应用描述：</label>
+							              <div class="col-sm-8">
+							                  <textarea rows="4" id="appDesc" name="appDesc"  class="form-control" placeholder="请输入应用描述，不能少于50字" ></textarea>
+							              </div>
+							     </div>
+				        </div>
+				        
+				        
+				        <div class="row">
+				                 <div class="col-sm-1"></div>
+							     <div class="col-sm-8 form-group">
+							              <label class="col-sm-4 control-label"><span style="color:red">*</span>是否强制更新: </label>
+							              <div class="col-sm-8" >
+							                  <label class="radio-inline">
+											        <input type="radio" name="isUpdate" id="isUpdate" value="是"> 是
+											    </label>
+											   <label class="radio-inline">
+											        <input type="radio" name="isUpdate" id="isUpdate" value="否"> 否
+											   </label>
+							              </div>
+							     </div>
+				        </div>
+				    </form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary" onclick="Test.editExect()">
+					保存
+				</button>
+				
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+	</div>
+</html>

@@ -1,0 +1,218 @@
+、<html>
+<head>
+	<title>监控管理</title>
+	 <!--#include virtual="/mes-demo/include/header.html" -->
+	</head>
+<body>
+<div class="container-fluid panel-custom panel panel-default animated fadeInRight" >
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="page-header">监控</h4>
+        </div>
+    </div>
+    <!-- 新增表单 -->
+    <div class="form-horizontal">
+      <form  name="dataForm">
+    	<input type="hidden" name="id" id="id"/>
+    	
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				异常类型：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="exceptType" name="exceptType"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				异常标题：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="exceptTitle" name="exceptTitle"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				异常描述：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="exceptDesc" name="exceptDesc"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				发生时间：
+			</label>
+				<div class="col-sm-7">
+				<input type="text" class="form-control" disabled="disabled" name="startTime" id="startTime"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				结束时间：
+			</label>
+				<div class="col-sm-7">
+				<input type="text" class="form-control" disabled="disabled" name="endTime" id="endTime"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				发现人：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="findUser" name="findUser"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				异常状态：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="status" name="status"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				车间：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="workshop" name="workshop"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				班组：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="team" name="team"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				机台：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="machine" name="machine"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				主体类型：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="objectType" name="objectType"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				主体ID：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="objectId" name="objectId"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				处理人：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="dealUser" name="dealUser"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				处理描述：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="dealDesc" name="dealDesc"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				创建人：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="createUser" name="createUser"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				创建时间：
+			</label>
+				<div class="col-sm-7">
+				<input type="text" class="form-control" disabled="disabled" name="createTime" id="createTime"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				更新人：
+			</label>
+				<div class="col-sm-7">
+	                   <input type="text" class="form-control" id="updateUser" name="updateUser"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				更新时间：
+			</label>
+				<div class="col-sm-7">
+				<input type="text" class="form-control" disabled="disabled" name="updateTime" id="updateTime"/>
+				</div>
+		     </div>
+		     </div>
+		   	<div class="row">
+    		<div class="col-sm-6 form-group">
+			<label class="col-sm-4 control-label">
+				备注：
+			</label>
+				<div class="col-sm-7">
+					<textarea class="form-control" rows="4"  name="remarks" id="remarks"  ></textarea>
+				</div>
+		     </div>
+		     </div>
+    	 </form>  
+        <div class="row">
+            <div class="form-group col-md-12 text-center">
+                <button class="btn btn-primary" onclick="fun_submit()" ><span class="glyphicon glyphicon-floppy-disk"></span>确认</button>
+                <button class="btn btn-default" onclick="fun_cancel()" ><span class="glyphicon glyphicon-remove"></span>取消</button>
+            </div>
+        </div>
+    </div>
+    </div>
+ </body>
+</html>

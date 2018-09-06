@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.MdmTimeTableDao">
+	<sql id="mdmTimeTableInfoColumns">
+			a.id AS "id",
+		a.code AS "code",
+		a.course_code AS "courseCode",
+		a.time_code AS "timeCode",
+		a.tearch_code AS "tearchCode",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.remark AS "remarks",
+		a.del_flag AS "delFlag",
+		a.course_name AS "courseName",
+		a.time_name AS "timeName",
+		a.teacher_name As "tearchName",
+		a.arrive_id AS "arriveId"
+	</sql>
+	<sql id="MdmTimeTableInfoJoins">
+	</sql>
+    
+	<select id="get" resultType="MdmTimeTableInfo">
+		SELECT 
+			<include refid="mdmTimeTableInfoColumns"/>
+		FROM mdm_timetable a
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="MdmTimeTableInfo">
+		SELECT 
+		a.id AS "id",
+		a.code AS "code",
+		a.course_code AS "courseCode",
+		a.time_code AS "timeCode",
+		a.tearch_code AS "tearchCode",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.remark AS "remarks",
+		a.del_flag AS "delFlag",
+		a.course_name AS "courseName",
+		a.time_name AS "timeName",
+		a.teacher_name As "tearchName",
+		a.arrive_id AS "arriveId",
+		b.code AS "tCode",
+		b.name AS "name",
+		b.week AS "week",
+		b.time_range AS "timeSeq",
+		c.code AS "classCode",
+		c.name AS "className"
+		FROM (mdm_timetable a LEFT JOIN mdm_course_time b ON a.time_code = b.code) LEFT JOIN mdm_course c  ON  a.course_code = c.code
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+            <if test="code!= null">
+               and a.code LIKE  concat('%', #{code},'%')
+            </if>
+             <if test="courseCode!= null">
+               and a.course_code = #{courseCode}
+            </if>
+             <if test="tearchCode!= null">
+               and a.tearch_code = #{tearchCode}
+            </if>
+             <if test="week!= null">
+               and b.week = #{week}
+            </if>
+              <if test="arriveId!= null">
+               and a.arrive_id = #{arriveId}
+            </if>
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="MdmTimeTableInfo">
+		SELECT 
+			<include refid="mdmTimeTableInfoColumns"/>
+		FROM  mdm_timetable a
+		<where>	
+			a.del_flag = '0'
+            <if test="code!= null">
+               and a.code LIKE  concat('%', #{code},'%')
+            </if>
+		</where>
+		order by a.create_time desc
+	</select>
+	
+	<update id="delete">
+		UPDATE mdm_timetable SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="insert">
+		INSERT INTO mdm_timetable(
+			id,
+			code,
+			course_code,
+			time_code,
+			tearch_code,
+			create_user,
+			create_time,
+			update_user,
+			update_time,
+			remark,
+			del_flag,
+			course_name,
+	        time_name,
+		    teacher_name
+		) VALUES (
+			#{id},
+			#{code},
+			#{courseCode},
+			#{timeCode},
+			#{tearchCode},
+			#{createUser},
+			#{createTime},
+			#{updateUser},
+			#{updateTime},
+			#{remarks},
+			#{DEL_FLAG_NORMAL},
+			#{courseName},
+			#{timeName},
+			#{tearchName}
+		)
+	</insert>
+	
+   <update id="update">
+		UPDATE mdm_timetable SET 	
+		    code = #{code},
+		    course_code = #{courseCode},
+		    time_code = #{timeCode},
+		    tearch_code = #{tearchCode},
+		    course_name = #{courseName},
+		    time_name = #{timeName},
+		    teacher_name = #{tearchName},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+	
+	 <update id="updateArrive">
+		UPDATE mdm_timetable SET 	
+		    arrive_id = #{arriveId},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE code = #{code}
+	</update> 
+</mapper>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.CdNoticeDao">
+	<sql id="CdNoticeInfoColumns">
+		a.id AS "id",
+		a.notice_id AS "noticeId",
+		a.course_code AS "courdeCode",
+		a.course_name AS "courseName",
+		a.notice_content AS "noticeContent",
+		a.accept_person AS "acceptPerson",
+		a.fileId AS "fileId",
+		a.notice_time AS "noticeTime",
+		a.notice_person AS "noticePerson",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.del_flag AS "delFlag",
+		a.notice_type AS "noticeType",
+		a.accept_person_name AS "acceptPersonName",
+		a.notice_person_name AS "noticePersonName"
+ 	</sql>
+	<sql id="CdNoticeInfoJoins">
+		a.id AS "id",
+		a.notice_id AS "noticeId",
+		a.course_code AS "courdeCode",
+		a.course_name AS "courseName",
+		a.notice_content AS "noticeContent",
+		a.accept_person AS "acceptPerson",
+		a.fileId AS "fileId",
+		a.notice_time AS "noticeTime",
+		a.notice_person AS "noticePerson",
+		a.create_user AS "createUser",
+		a.create_time AS "createTime",
+		a.update_user AS "updateUser",
+		a.update_time AS "updateTime",
+		a.del_flag AS "delFlag",
+		a.notice_type AS "noticeType",
+		a.accept_person_name AS "acceptPersonName",
+		a.notice_person_name AS "noticePersonName"
+	</sql>
+    
+	<select id="get" resultType="CdNoticeInfo">
+		SELECT 
+			<include refid="CdNoticeInfoColumns"/>
+		FROM cd_notice_detail a 
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="CdNoticeInfo">
+		SELECT 
+			<include refid="CdNoticeInfoColumns"/>
+		FROM cd_notice_detail a  
+		<where>
+			a.del_flag = '0'
+			<if test="acceptPerson!= null and acceptPerson != ''">
+               and a.accept_person = #{acceptPerson}
+            </if>
+            <if test="noticePerson!= null and noticePerson != ''">
+               and a.notice_person = #{noticePerson}
+            </if>
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="CdNoticeInfo">
+		SELECT 
+			<include refid="CdNoticeInfoJoins"/>
+ 	    FROM cd_notice_detail a LEFT JOIN cd_course b ON a.notice_id = b.id
+		<where>	
+				 a.del_flag = '0' 
+		   <if test="acceptPerson!= null and acceptPerson != ''">
+               and a.accept_person = #{acceptPerson}
+            </if>
+            <if test="noticePerson!= null and noticePerson != ''">
+               and a.notice_person = #{noticePerson}
+            </if>
+		</where>
+	</select>
+	
+	<update id="delete">
+		UPDATE cd_notice_detail SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+
+	<insert id="insert">
+		INSERT INTO cd_notice_detail(
+			id,
+			notice_id,
+			course_code,
+			course_name,
+			notice_content,
+			accept_person,
+			fileId,
+			notice_time,
+			notice_person,
+			create_user,
+			create_time,
+			del_flag,
+			notice_type,
+			accept_person_name,
+			notice_person_name
+		) VALUES (
+			#{id},
+			#{noticeId},
+			#{courdeCode},
+			#{courseName},
+			#{noticeContent},
+			#{acceptPerson},
+			#{fileId},
+			#{noticeTime},
+			#{noticePerson},
+			#{createUser},
+			#{createTime},
+			#{DEL_FLAG_NORMAL},
+			#{noticeType},
+			#{acceptPersonName},
+			#{noticePersonName}
+		)
+	</insert>
+	
+	  <update id="update">
+		UPDATE cd_notice_detail SET 	
+		    notice_id = #{noticeId},
+			update_user = #{updateUser},
+			update_time = #{updateTime}
+		WHERE id = #{id}
+	</update>  
+</mapper>

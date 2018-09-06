@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--#include virtual="/cd-demo/include/header_chartset.html" -->
+<!--#include virtual="/cd-demo/include/header_style.html" -->
+<!--#include virtual="/cd-demo/include/header_script.html" -->
+ <title>@ViewBag.Title | Tetra Pak Plant Platform</title>
+<link rel="icon" href="../../favicon.ico">
+</head>
+<body>

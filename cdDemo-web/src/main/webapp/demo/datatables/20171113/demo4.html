@@ -1,0 +1,194 @@
+ <!--#include virtual="/mes-demo/include/header.html" -->
+ <style>
+input[type=radio],input[type=checkbox]  {  
+    display: inline-block;  
+    vertical-align: middle;  
+    width: 18px;  
+    height: 18px;  
+    -webkit-appearance: none;  
+    background-color: transparent;  
+    border: 0;  
+    outline: 0 !important;  
+    line-height: 18px;  
+    color: #d8d8d8;  
+} 
+input[type=radio]:after  {  
+    content: "";  
+    display:block;  
+    width: 18px;  
+    height: 18px;  
+    border-radius: 50%;  
+    text-align: center;  
+    line-height: 12px;  
+    font-size: 16px;  
+    color: #fff;  
+    border: 2px solid #ddd;  
+    background-color: #fff;  
+    box-sizing:border-box;  
+}  
+input[type=radio]:checked:after  {  
+    content: "L";  
+    transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);  
+    -webkit-transform:matrix(-0.766044,-0.642788,-0.642788,0.766044,0,0);  
+    border-color: #37AF6E;  
+    background-color: #347BB7;  
+}    
+</style>
+<!-- 拼件列表  --> 
+ <div class="main_content warpper animated fadeInRight">
+	<div class="container-fluid panel-custom panel panel-default">
+	   <div class="row">
+		        <!-- 标题栏  -->
+		        <div class="col-sm-12">
+		            <h4 class="page-header">datatable 行内编辑(不使用第三方插件)之行内编辑保存</h4>
+		        </div>
+	     </div>
+	    
+		     <!--按钮组  -->
+		    <div class="row">
+		         <div class="col-sm-12">	
+		            <div class="btn-group btn-group-sm text-center pull-right">
+		               <a class="btn btn-primary" id="batch-edit-btn"><span class="glyphicon glyphicon-hand-down"></span>批量编辑</a>
+		               <a class="btn btn-primary" id="batch-save-btn"><span class="glyphicon glyphicon-hand-down"></span>批量保存</a>
+		         </div>
+		     </div>
+		     <br/>  <br/>
+    <div class="row">
+        <div class="col-sm-12">
+            <table id="combineTab"  class="table table-striped table-hover table-condensed table-bordered auto-tab tab-center" style="width:100%">
+                <thead>
+                       <tr>
+                        <th>序号</th>
+                        <th>拼件编号</th>
+                        <th>库位编号</th>
+                        <th>包号</th>
+                        <th>操作</th>
+                     </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+      </div> 
+	</div>
+</div>
+   <div style="color:red;margin-left:20px;">
+     <p>不需要引入其他的文件</p>
+     <p>js参看源码</p>
+   </div>
+</div>
+  <script type="text/javascript">
+	  $(function(){
+		  var table = $('#combineTab').DataTable({
+	        	   'ajax' : {
+						type : 'POST',//更改Ajax的请求方式   
+						data : function ( d ) {
+						         return $.extend( {}, d,{status:0});//添加额外的参数发送到服务器 查询条件
+						    },
+						url : "/mes-demo/workshop/combineCloth/findByMap.do",//从一个ajax数据源读取数据给表格内容  
+						error : function(resp) {
+						}
+	           },
+	        	'serverSide' : true,//是否开启服务器模式
+	        	'stateSave' : true,//保存状态 - 在页面重新加载的时候恢复状态（页码等内容）  
+				'processing' :  "<span style='color:#ff0000;'><img src='/mes-demo/static/bmsmart/images/loading.gif'></span>",//当表格处在处理过程（例如排序）中时，启用或者禁止 'processing'指示器的显示。  
+				'displayStart' : 0,//初始化显示的时候从第几条数据开始显示(一开始显示第几页)  
+	             "columns": [
+	        	       {
+			    		 "data": null,
+			    		 "createdCell": function (nTd, sData, oData, iRow, iCol) {
+			    		 var startnum = this.api().page() * (this.api().page.info().length);
+			    		 $(nTd).html(iRow + 1 + startnum); 
+			             }
+					  }, 
+					  {'data':'combineId'},  
+					  {'data':'localNumber'},
+					  {'data':'packNumber'},  
+					  {'data':'id',
+						  "render": function(data,type,full) {
+				            	var actions = "<button  class='edit-btn'  type='button'>编辑</button>";
+				            	 return actions;
+				            }
+					  }
+	           ],
+	           "language": {
+	               "sProcessing": "处理中...",
+	               "sLengthMenu": "显示 _MENU_ 项结果",
+	               "sZeroRecords": "没有匹配结果",
+	               "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+	               "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+	               "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+	               "sInfoPostFix": "",
+	               "sSearch": "搜索:",
+	               "sUrl": "",
+	               "sEmptyTable": "表中数据为空",
+	               "sLoadingRecords": "载入中...",
+	               "sInfoThousands": ",",
+	               "oPaginate": {
+	                   "sFirst": "首页",
+	                   "sPrevious": "上页",
+	                   "sNext": "下页",
+	                   "sLast": "末页"
+	               },
+	               "oAria": {
+	                   "sSortAscending": ": 以升序排列此列",
+	                   "sSortDescending": ": 以降序排列此列"
+	               }
+	           }
+	       });
+		  
+		   $("#combineTab tbody").on("click",".edit-btn",function(){
+	           var tds=$(this).parents("tr").children();
+	           $.each(tds, function(i,val){
+	               var jqob=$(val);
+	               if(i < 1 || jqob.has('button').length ){return true;}//跳过第1项 序号,按钮
+	               var txt=jqob.text();
+	               var put=$("<input type='text'>");
+	               put.val(txt);
+	               jqob.html(put);
+	           });
+	           $(this).html("保存");
+	           $(this).toggleClass("edit-btn");
+	           $(this).toggleClass("save-btn");
+	       });
+	 
+		   
+		   $("#combineTab tbody").on("click",".save-btn",function(){
+	           var row=table.row($(this).parents("tr"));
+	           var tds=$(this).parents("tr").children();
+	           $.each(tds, function(i,val){
+	               var jqob=$(val);
+	               //把input变为字符串
+	               if(!jqob.has('button').length){
+	                   var txt=jqob.children("input").val();
+	                   jqob.html(txt);
+	                   table.cell(jqob).data(txt);//修改DataTables对象的数据
+	               }
+	           });
+	           var data=row.data();
+	           $.ajax({
+	               "url":"/mes-demo/workshop/combineCloth/edit.do",
+	               "data":data,
+	               "type":"post",
+	               "error":function(){
+	                   alert("服务器未正常响应，请重试");
+	               },
+	               "success":function(response){
+	                   alert(response);
+	               }
+	           });
+	           $(this).html("编辑");
+	           $(this).toggleClass("edit-btn");
+	           $(this).toggleClass("save-btn");
+	       });
+	 
+		   //批量点击编辑按钮
+	       $("#batch-edit-btn").click(function(){
+	           $(".edit-btn").click();
+	       });
+	       $("#batch-save-btn").click(function(){
+	           $(".save-btn").click();
+	       });
+	});
+    </script>
+</body>
+</html>

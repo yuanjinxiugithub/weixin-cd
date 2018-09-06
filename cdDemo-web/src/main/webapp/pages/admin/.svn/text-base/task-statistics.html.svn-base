@@ -1,0 +1,11 @@
+  <!--#include virtual="/cd-demo/include/h-ui.html" -->
+  <!-- 作业管理-->
+  <div class="warpper">
+     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>作业服务<span class="c-gray en">&gt;</span>作业统计<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+     <div class="page-container">
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+</html>

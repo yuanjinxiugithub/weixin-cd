@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<link rel="icon" href="/cd-demo/static/bmsmart/images/favicon.ico">
+<title>课堂管理服务平台</title>
+<!--#include virtual="/cd-demo/include/header_style.html" -->
+<!--#include virtual="/cd-demo/include/header_script.html" -->
+</head>
+<body class="no-skin">
+	<div id="navbar" class="navbar navbar-default  ace-save-state">
+		<div class="navbar-container ace-save-state" id="navbar-container">
+			<button type="button" class="navbar-toggle menu-toggler pull-left"
+				id="menu-toggler" data-target="#sidebar">
+				<span class="sr-only">Toggle sidebar</span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+
+			<div class="navbar-header pull-left">
+				<a href="index.html" class="navbar-brand"> <small> 
+				<i class="fa fa-leaf"></i> 武汉纺织大学
+				</small>
+				</a>
+			</div>
+
+			<div class="navbar-buttons  pull-right"
+				role="navigation">
+				<ul class="nav ace-nav">
+					<li class="light-blue">
+					<a href="#" > 
+					<img class="nav-user-photo" src="/cd-demo/static/assets/images/avatars/user.jpg" alt="Jason's Photo" /> <span class="user-info"> <small>欢迎,</small>
+								admin
+						</span> 
+					</a>
+                 </li>
+				<li class="light-blue pull-right"><a href="login.html"><i class="glyphicon glyphicon-play-circle"></i>退出</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container ace-save-state" id="main-container">
+
+		<div id="sidebar" class="sidebar responsive  ce-save-state">
+
+			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+					<button class="btn btn-success">
+						<i class="ace-icon fa fa-signal"></i>
+					</button>
+
+					<button class="btn btn-info">
+						<i class="ace-icon fa fa-pencil"></i>
+					</button>
+
+					<button class="btn btn-warning">
+						<i class="ace-icon fa fa-users"></i>
+					</button>
+
+					<button class="btn btn-danger">
+						<i class="ace-icon fa fa-cogs"></i>
+					</button>
+				</div>
+
+				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+					<span class="btn btn-success"></span> <span class="btn btn-info"></span>
+
+					<span class="btn btn-warning"></span> <span class="btn btn-danger"></span>
+				</div>
+			</div>
+			<!-- /.sidebar-shortcuts -->
+
+			<ul class="nav nav-list">
+                <li class="active">
+					   <a href=index.html class="dropdown-toggle"> 
+					      <i class="menu-icon fa fa-tachometer"></i> 
+							<span class="menu-text">我的面板 </span>
+							<b class="arrow fa fa-angle-down"></b>
+					   </a> 
+					   <b class="arrow"></b>
+						<ul class="submenu">
+							<li class="" >
+								<a href="user-show.html"  target="mainFrame"> 
+									<i class="menu-icon fa fa-caret-right"></i> 个人信息
+								</a> 
+							    <b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="user-password.html"  target="mainFrame"> 
+									<i class="menu-icon fa fa-caret-right"></i> 修改密码
+								</a> 
+							    <b class="arrow"></b>
+							</li>
+						</ul>
+				</li>
+				<li class="">
+				   <a href="#" class="dropdown-toggle"> 
+				      <i class="menu-icon fa fa-desktop"></i>
+				       <span class="menu-text">
+							系统设置
+					  </span> 
+					  <b class="arrow fa fa-angle-down"></b>
+				   </a> 
+				   <b class="arrow"></b>
+					<ul class="submenu">
+						<!-- <li class="">
+							<a href="manager-mange.html" target="mainFrame"> 
+								<i class="menu-icon fa fa-caret-right"></i> 管理员管理
+							</a> 
+						    <b class="arrow"></b>
+						</li> -->
+						<li class="">
+							<a href="role-manage.html"  target="mainFrame"> 
+								<i class="menu-icon fa fa-caret-right"></i> 角色管理
+							</a> 
+						    <b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="user-list.html"  target="mainFrame"> 
+								<i class="menu-icon fa fa-caret-right"></i> 用户列表
+							</a> 
+						    <b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="file-list.html"  target="mainFrame"> 
+								<i class="menu-icon fa fa-caret-right"></i> 文件列表
+							</a> 
+						    <b class="arrow"></b>
+						</li>
+					</ul>
+					</li>
+ 				<li class=""><!--主数据列表   -->
+					  <a href="#" class="dropdown-toggle"> 
+						  <i class="menu-icon glyphicon glyphicon-credit-card"></i> 
+						  <span class="menu-text">主数据管理 </span> 
+						  <b class="arrow fa fa-angle-down"></b>
+					  </a>
+					 <b class="arrow"></b>
+						<ul class="submenu">
+							<li class="">
+							<a href="master-data.html" target="mainFrame"> 
+							   <i class="menu-icon fa fa-caret-right" ></i> 主数据列表
+							</a> 
+							<b class="arrow"></b></li>
+						</ul>
+			   </li>
+				<li class=""><!--点到服务   -->
+				  <a href="#" class="dropdown-toggle"> 
+					  <i class="menu-icon glyphicon glyphicon-flag"></i> 
+					  <span class="menu-text">点到服务 </span> 
+					  <b class="arrow fa fa-angle-down"></b>
+				  </a>
+				 <b class="arrow"></b>
+
+					<ul class="submenu">
+						<li class=""><a href="arrive-list.html" target="mainFrame"> 
+						<i class="menu-icon fa fa-caret-right"></i> 信息列表
+						</a> <b class="arrow"></b></li>
+
+						<li class="">
+						<a href="arrive-statistics.html" target="mainFrame"> 
+						<i class="menu-icon fa  fa-bar-chart"></i> 信息统计
+						</a> <b class="arrow"></b></li>
+					</ul>
+			   </li>
+			    <li class=""><!--请假服务   -->
+				  <a href="#" class="dropdown-toggle"> 
+					  <i class="menu-icon fa fa-envelope"></i> 
+					  <span class="menu-text">请假服务 </span> 
+					  <b class="arrow fa fa-angle-down"></b>
+				  </a>
+				 <b class="arrow"></b>
+					<ul class="submenu">
+						<li class=""><a href="leave-list.html" target="mainFrame"> 
+						<i class="menu-icon fa fa-caret-right"></i> 信息列表
+						</a> <b class="arrow"></b></li>
+
+						<!-- <li class=""><a href="leave-statistics.html" target="mainFrame"> <i
+								class="menu-icon fa fa-caret-right"></i> 信息统计
+						</a> <b class="arrow"></b></li> -->
+					</ul>
+			   </li>
+                <li class=""><!--通知服务   -->
+				  <a href="#" class="dropdown-toggle"> 
+					  <i class="menu-icon fa fa-send"></i> 
+					  <span class="menu-text">通知服务 </span> 
+					  <b class="arrow fa fa-angle-down"></b>
+				  </a>
+				 <b class="arrow"></b>
+					<ul class="submenu">
+						<li class=""><a href="notice-list.html" target="mainFrame"> 
+							<i class="menu-icon fa fa-caret-right"></i> 信息列表
+							</a> <b class="arrow"></b>
+						</li>
+						<li class="">
+						<a href="notice-statistics.html" target="mainFrame">
+						 <i class="menu-icon fa fa-caret-right"></i> 信息统计
+						</a>
+						 <b class="arrow"></b></li>
+					</ul>
+			   </li>
+			    <li class=""><!--任务管理   -->
+				  <a href="#" class="dropdown-toggle"> 
+					  <i class="menu-icon fa fa-tasks"></i> 
+					  <span class="menu-text">作业管理 </span> 
+					  <b class="arrow fa fa-angle-down"></b>
+				  </a>
+				 <b class="arrow"></b>
+					<ul class="submenu">
+						<li class=""><a href="task-list.html" target="mainFrame"> <i
+								class="menu-icon fa fa-caret-right"></i> 作业列表
+						</a> <b class="arrow"></b></li>
+
+						<li class=""><a href="task-statistics.html" target="mainFrame"> 
+						<i class="menu-icon fa fa-caret-right"></i>  作业统计
+						</a> <b class="arrow"></b></li>
+					</ul>
+			   </li>
+			   
+			</ul>
+			<!-- /.nav-list -->
+		</div>
+		<!--  主题内容-->
+		<div class="main-content">
+			<section class="content-header">
+		       <iframe id="mainFrame" name="mainFrame" src="welcome.html" style="overflow-x:hidden;" scrolling="yes"  frameborder="no"  width="100%" height='540px'>
+		       </iframe>
+		    </section>
+		    <section style="margin-left:15px">
+	           <!-- 页脚 -->
+			  <footer class="main-footer">
+			    <!-- To the right -->
+			    <!-- Default to the left -->
+			    <strong>Copyright &copy; 2018 <a href="#">Company</a>.</strong> All rights reserved.
+			  </footer>
+		    </section>
+		    
+		</div>
+	</div>
+	<!-- /.main-container -->
+     <script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='/cd-demo/static/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+	</script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<script type="text/javascript">
+	
+</script>
+</body>
+</html>

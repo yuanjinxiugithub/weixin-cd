@@ -1,0 +1,8 @@
+
+<!-- select2  css-->
+<link rel="stylesheet" type="text/css" href="/cd-demo/static/select2/select2.min.css">
+
+<!-- select2 js -->
+<script type="text/javascript" src="/cd-demo/static/select2/select2.full.min.js"></script>
+
+<script type="text/javascript" src="/cd-demo/static/select2/i18n/zh-CN.js"></script>

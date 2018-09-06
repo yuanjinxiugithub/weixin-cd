@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/course_design/!svn/ver/389/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl
+END
+MdmCourseServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/course_design/!svn/ver/371/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmCourseServiceImpl.java
+END
+CdLeaveServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/335/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/CdLeaveServiceImpl.java
+END
+MdmClassServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/371/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmClassServiceImpl.java
+END
+MdmTimeTableServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/course_design/!svn/ver/389/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmTimeTableServiceImpl.java
+END
+CdCourseServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/397/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/CdCourseServiceImpl.java
+END
+MdmAddrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/168/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmAddrServiceImpl.java
+END
+MdmTeacherServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/course_design/!svn/ver/310/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmTeacherServiceImpl.java
+END
+BaseServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/BaseServiceImpl.java
+END
+SysUserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/378/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/SysUserServiceImpl.java
+END
+MdmCourseTimeServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/course_design/!svn/ver/371/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmCourseTimeServiceImpl.java
+END
+SysFileServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/294/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/SysFileServiceImpl.java
+END
+TestServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/course_design/!svn/ver/51/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/TestServiceImpl.java
+END
+MdmIstrServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/course_design/!svn/ver/103/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmIstrServiceImpl.java
+END
+SysLogServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/course_design/!svn/ver/270/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/SysLogServiceImpl.java
+END
+CdArriveDetailServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/course_design/!svn/ver/250/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/CdArriveDetailServiceImpl.java
+END
+MdmStudentServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/course_design/!svn/ver/310/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/MdmStudentServiceImpl.java
+END
+CdNoticeServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/course_design/!svn/ver/254/ssm/cdDemo/cdDemo-service/src/main/java/com/bmsmart/mes/mesDemo/service/impl/CdNoticeServiceImpl.java
+END

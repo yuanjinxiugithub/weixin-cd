@@ -1,0 +1,105 @@
+	<!doctype html>
+	<html lang="en">
+	<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<!--需要引入 jquery select2文件下的所有文件 包括中文包  bootstrap设置样式   简单封装select js文件到select2-ex.js 文件中-->
+	<script type="text/javascript" src="/mes-demo/static/jquery/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/mes-demo/static/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/mes-demo/static/select2/select2.min.css">
+	<script type="text/javascript" src="/mes-demo/static/select2/select2.full.min.js"></script>
+	<script type="text/javascript" src="/mes-demo/static/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/mes-demo/static/select2/i18n/zh-CN.js"></script>
+	<script type="text/javascript" src="/mes-demo/static/select2/select2-ex.js"></script>
+	</head>
+	<body style="margin:20px">
+	
+		              <div class="col-sm-6 form-group">
+			                <label class="col-sm-4 control-label">多选/getjson读取后台数据：</label>
+			                <div class="col-sm-8">
+			                   		<select class="billtype form-control "    name="billtye">
+					                </select>
+			                </div>
+			            </div>
+			          <div class="col-sm-6 form-group">
+			                <label class="col-sm-4 control-label">单选/getjson读取后台数据:</label>
+			                <div class="col-sm-8">
+			                   		<select class="billtt form-control "  name="billtt"> 
+			                   		 </select>
+			                </div>
+					  </div>
+			          <div class="col-sm-6 form-group">
+					            <label class="col-sm-4 control-label">数组传值/js数组传值：</label>
+					           <div class="col-sm-8">
+					                   		<select class="bill form-control "    name="bill">
+							                </select>
+					                </div>
+			            </div>
+			          <div class="col-sm-6 form-group">
+			                <label class="col-sm-4 control-label">ajax方法加载数据:</label>
+			                <div class="col-sm-8">
+			                   		<select class="billajax form-control "  name="billaijx">
+			                   		    <option></option>
+			                   		</select>
+			                </div>
+			           </div>
+			          <div class="col-sm-6 form-group">
+			                <label class="col-sm-4 control-label">select2设置默认的值:</label>
+			                <div class="col-sm-8">
+			                   		<select class="default form-control "  name="default">
+			                   		   <option value="1">产品A</option>
+							           <option value="2">产品B</option>
+							           <option value="3">产品C</option>
+							           <option value="4">产品C</option>
+							           <option value="5">产品D</option>
+			                   		</select>
+			                </div>
+			           </div>
+					  <div class="col-sm-6 form-group">
+			                <label class="col-sm-4 control-label">其他内容：</label>
+			                <div class="col-sm-8">
+			                   		<select class="default form-control "  name="default">
+			                   		</select>
+			                </div>
+			           </div>
+					 
+					  <div class="row text-center ">
+					    <button id="btn2" class="btn">点击获多选取值</button>
+					    <button id="btn1" class="btn">点击获单选取值</button>
+					 </div>
+			     
+			<script type="text/javascript">
+			   //直接从后台获取数据 单选绑定
+			    bindSelect("billtt","/mes-demo/testselect.do");
+			    
+			   ////直接从后台获取数据 多选绑定
+				bindSelectMultiple("billtype","/mes-demo/testselect.do");
+				
+			   ///使用数据进行绑定
+			   var data = [{ id: "生产出库", text: '生产出库' }, { id: "其他出库", text: '其他出库' }, { id: "生产入库", text: '生产入库' }, { id: "盘点", text: '盘点' },{id:"调拨",text:"调拨"}];
+				arrayDataLoad("bill",data);
+				
+				//ajax 请求
+				bindSelect("billajax")
+				bindSelectAjax("billajax","/mes-demo/ajaxtest.do");
+				
+				//点击获取多选的值
+				$("#btn1").click(function(){
+					alert("value:"+getSelectValue("billtt").id+"   text:"+getSelectValue("billtt").text);
+				});
+				
+				//点击获取单选的值
+				$("#btn2").click(function(){
+					var arr = getSelectMulti("billtype");
+					var str = "";
+					for(var i =0;i<arr.length;i++){
+						str+=arr[i].text;
+					}
+					alert(str);
+				});
+				
+				//设置下拉框的默认选中  class + 设置的value
+				setDefault("default","5");
+			</script>
+	</body>
+	</html>

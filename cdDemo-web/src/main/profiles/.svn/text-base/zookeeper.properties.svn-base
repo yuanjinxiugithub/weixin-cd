@@ -1,0 +1,2 @@
+#Zookeeper
+zookeeper.service=zookeeper://192.168.2.241:2180

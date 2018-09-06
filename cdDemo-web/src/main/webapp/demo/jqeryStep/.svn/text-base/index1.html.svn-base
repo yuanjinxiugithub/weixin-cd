@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>step</title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.step.css" />
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="js/jquery.step.min.js"></script>
+		<style type="text/css">
+			.step{
+				width:800px;
+				margin:0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<p style="margin:20px 100px;">使用jquery.step.js 实现动态的时间轴---json数据	</p>
+		  <!--step 容器-->
+  		<div class="step"></div>
+  		
+  		<script type="text/javascript">
+  			$(function(){
+  				//使用json数据动态的显示
+  				var data = {title:["计划", "下达", "开始", "完工", "结束"],currentIndex:2};
+  				//初始化设计数据
+  				$step = $(".step").step({
+  			    index: data.currentIndex,//初始化 所在的index索引
+				time: 500,
+				title: data.title//设置title
+  				});
+  				//获取step的index   getIndex();方法
+  			    //console.log($step.getIndex());
+  				//toStep()跳转到指定的一层
+  				//$step.toStep(3);
+  			});
+  		</script>
+	</body>
+</html>

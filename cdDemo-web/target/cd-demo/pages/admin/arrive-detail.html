@@ -1,0 +1,168 @@
+  <!--#include virtual="/cd-demo/include/h-ui.html" -->
+  <!-- 点到管理-->
+  <div class="warpper">
+     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>点到服务<span class="c-gray en">&gt;</span>点到详情<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+     <div class="page-container">
+       <!-- 快捷查询条件 -->
+	    <form class="form-horizontal" id="mainForm"  method="post"  >
+	     <!-- 搜索 -->
+	        <div class="row">
+	           <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">排课编码:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="scheduleCode"  readonly/>
+	                </div>
+	            </div>
+	            <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">课程名称:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="courseName"  readonly/>
+	                </div>
+	            </div>
+	             <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">课程编号:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="coureCode"  readonly/>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="row">
+	             <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">上课地点:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="addrCode" readonly />
+	                </div>
+	            </div>
+	            <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">上课时间:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="timeCode" readonly />
+	                </div>
+	            </div>
+	            <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">点到时间:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="arriveTime" readonly />
+	                </div>
+	            </div>
+	        </div>
+	         <div class="row">
+	             <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">教师编码:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="teacherCode" readonly />
+	                </div>
+	            </div>
+	            <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">教师名称:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" name="teacherName" readonly />
+	                </div>
+	            </div>
+	            <div class="col-sm-4 form-group">
+	                <label class="col-sm-4 control-label">课程类型:</label>
+	                <div class="col-sm-8">
+	                   <input type="text" class="form-control" value="必修"  readonly/>
+	                </div>
+	            </div>
+	        </div>
+	    </form>
+     
+	    <!--  查询生成表单-->
+	    <div class="row" style="margin-top:8px">
+	        <div class="col-sm-12 ">
+	          <div class="tab-content">
+	               <!-- 点到的列表  -->
+			          <table id="dataTable"  class="table table-striped table-hover table-condensed table-bordered" style="width:100%">
+			              <thead>
+			                  <tr>
+								<th colspan="8" scope="col">实到学生</th>
+							</tr>
+			                  <tr>
+			                      <th>序号</th>
+			                      <th>学生名称</th>
+			                      <th>学生编号</th>
+			                      <th>所属班级</th>
+			                      <th>班级名称</th>
+			                      <th>所属学院</th>
+			                      <th>答到时间</th>
+			                  </tr>
+			              </thead>
+			              <tbody>
+			              </tbody>
+			          </table>
+			    </div>
+	        </div>
+	      </div>
+	      <!--  查询生成表单-->
+	    <div class="row" style="margin-top:8px">
+	        <div class="col-sm-12 ">
+	          <div class="tab-content">
+	               <!-- 点到的列表  -->
+			          <table id="dataTable1"  class="table table-striped table-hover table-condensed table-bordered" style="width:100%">
+			              <thead>
+			                  <tr>
+								<th colspan="8" scope="col">未到学生</th>
+							</tr>
+			                  <tr>
+			                      <th>序号</th>
+			                      <th>学生名称</th>
+			                      <th>学生编号</th>
+			                      <th>所属班级</th>
+			                      <th>班级名称</th>
+			                      <th>所属学院</th>
+			                  </tr>
+			              </thead>
+			              <tbody>
+			              </tbody>
+			          </table>
+			    </div>
+	        </div>
+	      </div>
+	      
+	      <!--  查询生成表单-->
+	    <div class="row" style="margin-top:8px">
+	        <div class="col-sm-12 ">
+	          <div class="tab-content">
+	               <!-- 点到的列表  -->
+			          <table id="dataTable2"  class="table table-striped table-hover table-condensed table-bordered" style="width:100%">
+			              <thead>
+			                  <tr>
+								<th colspan="9" scope="col">请假学生</th>
+							</tr>
+			                  <tr>
+			                      <th>序号</th>
+			                      <th>学生名称</th>
+			                      <th>学生编号</th>
+			                      <th>所属班级</th>
+			                      <th>班级名称</th>
+			                      <th>请假时间</th>
+			                      <th>是否通过</th>
+			                      <th>请假原因</th>
+			                      <th>查看附件</th>
+			                  </tr>
+			              </thead>
+			              <tbody>
+			              </tbody>
+			          </table>
+			    </div>
+	        </div>
+	      </div>
+	      <div class="row">
+            <div class="form-group col-sm-12 text-center">
+                <a href="arrive-list.html" class="btn btn-default  btn-sm"><span class="glyphicon glyphicon-backward"></span>&nbsp;返回</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/arrive-detail.js"></script>
+		  <script>
+		  $(function(){
+			  ArriveDetail.loadMainForm();
+			  ArriveDetail.loadTab();
+			  ArriveDetail.loadTab1();
+			  ArriveDetail.loadTab2();
+			 });
+		  </script>
+</body>
+</html>

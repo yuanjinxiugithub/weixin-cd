@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bmsmart.mes.mesDemo.dao.SysLogDao">
+	<sql id="SysLogsInfoColumns">
+		a.id AS "id",
+		a.login_name AS "login_name",
+		a.user_id AS "user_id",
+		a.ip AS "ip",
+		a.login_time AS "login_time",
+		a.create_time AS "create_time",
+		a.del_flag AS "delFlag"
+	</sql>
+	<sql id="SysLogsInfoJoins">
+			a.id AS "id",
+		a.login_name AS "login_name",
+		a.user_id AS "user_id",
+		a.ip AS "ip",
+		a.login_time AS "login_time",
+		a.create_time AS "create_time",
+		a.del_flag AS "delFlag"
+	</sql>
+    
+	<select id="get" resultType="SysLogsInfo">
+		SELECT 
+			<include refid="SysLogsInfoColumns"/>
+		FROM sys_logs a 
+		<where>
+			a.id = #{id}
+		</where>
+	</select>
+	
+	<select id="findList" resultType="SysLogsInfo">
+		SELECT 
+			<include refid="SysLogsInfoColumns"/>
+		FROM sys_logs a  
+		<where>
+			a.del_flag = '0'
+		</where>
+	</select>
+	
+	<select id="findByMap" resultType="SysLogsInfo">
+		SELECT 
+			<include refid="SysLogsInfoColumns"/>
+ 	    FROM sys_logs a 
+		<where>	
+				 a.del_flag = '0' 
+		</where>
+	</select>
+	
+	<update id="delete">
+		UPDATE sys_logs SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+		
+	<insert id="insert">
+		INSERT INTO sys_logs(
+			id,
+	        login_name,
+		    user_id,
+		    ip,
+		    login_time,
+		    create_time,
+			del_flag
+		) VALUES (
+			#{id},
+			#{login_name},
+			#{user_id},
+			#{ip},
+			#{login_time},
+			#{create_time},
+			#{DEL_FLAG_NORMAL}
+		)
+	</insert>
+	
+	  <update id="update">
+		UPDATE sys_logs SET 	
+		    name = #{name}
+		WHERE id = #{id}
+	</update>  
+</mapper>
